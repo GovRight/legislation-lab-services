@@ -1,7 +1,7 @@
 /* global expect */
 'use strict';
 
-describe('MODULES', function() {
+describe('llServices module deps', function() {
   [
     'govright.llServices',
     'govright.corpusServices',
