@@ -32,7 +32,7 @@ gulp.task('docs-html', function() {
       './dist/govright-ll-services.js'
       ]).pipe($.ngdocs.process({
         html5Mode: false,
-        title: 'GovRight Legislation Lab services for AngularJS 1'
+        title: 'GovRight Legislation Lab Services'
       }))
       .pipe(gulp.dest('./'));
   });
