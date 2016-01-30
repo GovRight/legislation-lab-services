@@ -3,6 +3,12 @@ var $ = require('gulp-load-plugins')();
 var spawn = require('child_process').spawn;
 var chalk = require('chalk');
 
+gulp.task('jshint', function () {
+  return gulp.src('./src/**/*.js')
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'));
+});
+
 gulp.task('js', function() {
   return gulp.src([
     './src/module.js',
