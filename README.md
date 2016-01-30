@@ -18,3 +18,11 @@ This will add the following services to your app:
 * Check the [documentation](http://govright.github.io/legislation-lab-services/#/api/govright.llServices)
 for examples and more detailed description of each service.
 * Check this [AngularJS boilerplate](https://github.com/GovRight/angular-bootstrap) by GovRight as an example 
+
+## Development
+
+Useful commands:
+
+* `npm test` - run tests
+* `gulp` - build packaged files from sources
+* `gulp docs` - build html documentation from source ngdocs, must be run on `gh-pages` branch
