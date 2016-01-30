@@ -5,10 +5,10 @@
   "author": "GovRight <contact@govright.org>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GovRight/legislation-lab-services.git",
+    "url": "git+https://github.com/GovRight/legislation-lab-services.git"
   },
   "bugs": {
-    "url": "https://github.com/GovRight/legislation-lab-services/issues",
+    "url": "https://github.com/GovRight/legislation-lab-services/issues"
   },
   "homepage": "https://github.com/GovRight/legislation-lab-services",
   "license": "MIT",
