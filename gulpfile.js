@@ -38,7 +38,8 @@ gulp.task('docs-html', function() {
       './dist/govright-ll-services.js'
       ]).pipe($.ngdocs.process({
         html5Mode: false,
-        title: 'GovRight Legislation Lab Services'
+        title: 'GovRight Legislation Lab Services',
+        styles: ['./assets/docs.css']
       }))
       .pipe(gulp.dest('./'));
   });
