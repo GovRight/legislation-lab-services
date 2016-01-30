@@ -28,7 +28,7 @@
     "test": "karma start ./test/karma.conf.js --single-run"
   },
   "pre-commit": [
-    "jshint"
+    "jshint", "test"
   ],
   "devDependencies": {
     "chai": "^3.5.0",
