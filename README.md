@@ -3,4 +3,18 @@
 The `govright.llServices` module provides services that encapsulate
 common techniques of interacting with the GovRight Corpus API.
 
-[Documentation](http://govright.github.io/legislation-lab-services/#/api/govright.llServices)
+## Usage
+
+Add `govright.llServices` module as a dependency to your main application module. 
+This will add the following services to your app:
+
+* `llAuth`
+* `llFacebook`
+* `llLocale`
+* `llMessage`
+
+## Further reading
+
+* Check the [documentation](http://govright.github.io/legislation-lab-services/#/api/govright.llServices)
+for examples and more detailed description of each service.
+* Check this [AngularJS boilerplate](https://github.com/GovRight/angular-bootstrap) by GovRight as an example 
