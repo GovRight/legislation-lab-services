@@ -41,7 +41,7 @@ for examples and more detailed description of each service.
 First install your local project's npm tools:
 
 ```bash
-# First install all the npm/bower packages:
+# This will install all the npm & bower packages:
 npm install
 ```
 
