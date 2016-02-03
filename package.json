@@ -25,7 +25,8 @@
   ],
   "scripts": {
     "jshint": "gulp jshint",
-    "test": "karma start ./test/karma.conf.js --single-run"
+    "test": "karma start ./test/karma.conf.js --single-run",
+    "postinstall": "bower install"
   },
   "pre-commit": [
     "jshint",

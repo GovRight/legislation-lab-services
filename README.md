@@ -5,7 +5,24 @@ common techniques of interacting with the GovRight Corpus API.
 
 ## Usage
 
-Add `govright.llServices` module as a dependency to your main application module. 
+Add `govright.llServices` module as a dependency to your main application module. Example:
+
+```html
+<!doctype html>
+<html ng-app="myApp">
+ <head>
+   <script src="js/angular.js"></script>
+   <!-- Include the ll services script -->
+   <script src="dist/govright-ll-services.js"></script>
+   <script>
+     // ...and add 'govright.llServices' as a dependency
+     var myApp = angular.module('myApp', ['govright.llServices']);
+   </script>
+ </head>
+ <body></body>
+</html>
+```
+
 This will add the following services to your app:
 
 * `llAuth`
@@ -21,9 +38,30 @@ for examples and more detailed description of each service.
 
 ## Development
 
-Useful commands:
+First install your local project's npm tools:
 
-* `npm test` - run tests
-* `gulp` - build packaged files (dist) from sources
-* `gulp docs` - build html documentation from source ngdocs, changes must be commited on `gh-pages` branch
-* `gulp serve` - run local documentation server
+```
+# First install all the npm/bower packages:
+npm install
+```
+
+Then run the gulp tasks:
+
+```
+# To build packaged js files from sources
+gulp
+
+# To build html documentation from source ngdocs
+# Changes must be commited on `gh-pages` branch
+gulp docs
+
+# To run local documentation server
+gulp serve
+```
+
+Finally, test the package:
+
+```
+# To run tests from `/test/specs` with npm
+npm test
+```
