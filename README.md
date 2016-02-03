@@ -15,7 +15,7 @@ This will add the following services to your app:
 
 ## Further reading
 
-* Check the [documentation](http://govright.github.io/legislation-lab-services/#/api/govright.llServices)
+* Check the [documentation](http://govright.github.io/legislation-lab-services/docs/#/api/govright.llServices)
 for examples and more detailed description of each service.
 * Check this [AngularJS boilerplate](https://github.com/GovRight/angular-bootstrap) by GovRight as an example 
 
