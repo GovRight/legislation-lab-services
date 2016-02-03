@@ -1,11 +1,6 @@
-/*.form-search .well .nav-header a {
-  display: block;
-  font-family: inherit;
-  word-wrap: break-word;
+.navbar .nav.pull-right.nav-custom {
+  margin-right: 10px;
 }
-.form-search .well .guide {
-  float: none;
-}*/
 
 .container,
 .navbar-fixed-top .container {
