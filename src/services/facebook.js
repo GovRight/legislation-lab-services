@@ -6,6 +6,9 @@
  * @header govright.llServices.llFacebook
  * @object
  *
+ * @requires $q
+ * @requires $window
+ *
  * @description
  *
  * Facebook auth/posting helper.
