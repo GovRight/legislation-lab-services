@@ -24,5 +24,6 @@ for examples and more detailed description of each service.
 Useful commands:
 
 * `npm test` - run tests
-* `gulp` - build packaged files from sources
-* `gulp docs` - build html documentation from source ngdocs, must be run on `gh-pages` branch
+* `gulp` - build packaged files (dist) from sources
+* `gulp docs` - build html documentation from source ngdocs, changes must be commited on `gh-pages` branch
+* `gulp serve` - run local documentation server
