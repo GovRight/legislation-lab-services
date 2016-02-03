@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var spawn = require('child_process').spawn;
 var chalk = require('chalk');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 gulp.task('jshint', function () {
   return gulp.src('./src/**/*.js')
@@ -9,7 +11,7 @@ gulp.task('jshint', function () {
     .pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('js', function() {
+gulp.task('js', function () {
   return gulp.src([
     './src/module.js',
     './src/services/*.js'
@@ -24,25 +26,42 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('docs-html', function() {
-  var git = spawn('git', ['branch']), output = '';
-  git.stdout.on('data', function(data) {
-    output += data;
-  });
-  git.on('close', function() {
-    if(output.indexOf('* gh-pages') < 0) {
-      console.log(chalk.red('\n\nYou must use `gh-pages` branch for html documentation.\n\n'));
-      process.exit();
+gulp.task('docs-html', function () {
+  return $.ngdocs.sections({
+    api: {
+      glob: ['./dist/govright-ll-services.js'],
+      api: true,
+      title: 'API Reference'
     }
-    return gulp.src([
-      './dist/govright-ll-services.js'
-      ]).pipe($.ngdocs.process({
-        html5Mode: false,
-        title: 'GovRight Legislation Lab Services',
-        styles: ['./assets/docs.css']
-      }))
-      .pipe(gulp.dest('./'));
+  }).pipe($.ngdocs.process({
+    html5Mode: false,
+    title: 'GovRight Legislation Lab Services',
+    styles: ['ngdocs_assets/docs.css'],
+    navTemplate: './ngdocs_assets/navbar.html'
+  }))
+    .pipe(gulp.dest('./docs'));
+});
+
+gulp.task('serve', function () {
+  browserSync({
+    notify: false,
+    port: 9000,
+    server: {
+      baseDir: ['./docs'],
+      routes: {'/bower_components': 'bower_components'}
+    }
   });
+  gulp.watch([
+    './dist/govright-ll-services.js',
+    './docs/partials/**/*',
+    './docs/css/**/*'
+  ]).on('change', reload);
+  gulp.watch([
+    './ngdocs_assets/**/*'
+  ], ['docs']);
+  gulp.watch([
+    './src/**/*.js'
+  ], ['js']);
 });
 
 gulp.task('docs', ['docs-html'/*, 'docs-md'*/]);

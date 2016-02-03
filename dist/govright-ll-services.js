@@ -6,7 +6,7 @@
  * @module govright.llServices
  * @description
  *
- * The `LLServices` module provides services that encapsulate
+ * The `govright.llServices` module provides services that encapsulate
  * common techniques of interacting with the GovRight Corpus API
  */
 (function() {
@@ -1031,7 +1031,7 @@
 
 (function () {
   angular
-    .module('app')
+    .module('govright.llServices')
     .factory('llMessage', ['$mdToast', '$mdDialog', '$state', Message]);
 
   function Message($mdToast, $mdDialog, $state) {

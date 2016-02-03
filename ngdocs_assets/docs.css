@@ -1,0 +1,13 @@
+/*.form-search .well .nav-header a {
+  display: block;
+  font-family: inherit;
+  word-wrap: break-word;
+}
+.form-search .well .guide {
+  float: none;
+}*/
+
+.row-fluid .span3 {
+  max-width:240px;
+  min-width:170px;
+}

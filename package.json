@@ -28,9 +28,11 @@
     "test": "karma start ./test/karma.conf.js --single-run"
   },
   "pre-commit": [
-    "jshint", "test"
+    "jshint",
+    "test"
   ],
   "devDependencies": {
+    "browser-sync": "^2.11.1",
     "chai": "^3.5.0",
     "chalk": "^1.1.1",
     "gulp": "^3.9.0",
