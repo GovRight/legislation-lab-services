@@ -5,6 +5,3 @@ bower_components
 .idea
 *.log
 .DS_Store
-
-# Only master
-/docs

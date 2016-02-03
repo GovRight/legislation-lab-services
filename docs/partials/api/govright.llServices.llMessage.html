@@ -1,0 +1,70 @@
+<h1><code ng:non-bindable="">llMessage</code>
+<div><span class="hint">service in module <code ng:non-bindable="">govright.llServices</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="govright-llservices-llmessage-page"><p>Various site messages, like 404, dialog popups, success toast, etc.</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_confirm">confirm(title, ok, cancel)</h3>
+<div class="confirm"><div class="govright-llservices-llmessage-confirm-page"><p>Display a confirm/action request.</p>
+<p>Example:</p>
+<pre class="prettyprint linenums">
+llMessage.confirm().then(function() {
+  // User clicked `Ok`
+}).catch(function() {
+  // User canceled
+});
+</pre>
+</div><h5 id="methods_confirm_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>title <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llmessage-confirm-page"><p>Confirm message</p>
+</div> <p><em>(default: Are you sure?)</em></p></td></tr><tr><td>ok <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llmessage-confirm-page"><p><code>Ok</code> button text</p>
+</div> <p><em>(default: Ok)</em></p></td></tr><tr><td>cancel <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llmessage-confirm-page"><p><code>Cancel</code> button text</p>
+</div> <p><em>(default: Cancel)</em></p></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_error">error(title, content, ok)</h3>
+<div class="error"><div class="govright-llservices-llmessage-error-page"><p>Display an error message in a dialog.</p>
+</div><h5 id="methods_error_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>title <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llmessage-error-page"><p>Error message title</p>
+</div> <p><em>(default: An error occurred)</em></p></td></tr><tr><td>content <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-llservices-llmessage-error-page"><p>Error message text or an error object</p>
+</div></td></tr><tr><td>ok <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llmessage-error-page"><p>Close button text</p>
+</div> <p><em>(default: Close)</em></p></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_error404">error404(message)</h3>
+<div class="error404"><div class="govright-llservices-llmessage-error404-page"><p>Display the 404 error page.</p>
+<p>Transitions to the 404 page without changing the url.
+Requires the <code>site.404</code> route to be set up.</p>
+<p>Example route:</p>
+<pre class="prettyprint linenums">
+$stateProvider.state('site.404', {
+  params: { message: undefined },
+  templateUrl: '/templates/site/404.html',
+  controller: 'StaticPageController'
+})
+</pre>
+</div><h5 id="methods_error404_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>message <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llmessage-error404-page"><p>Custom message to display on the 404 page</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_success">success(content)</h3>
+<div class="success"><div class="govright-llservices-llmessage-success-page"><p>Display a success message in a toast.</p>
+</div><h5 id="methods_success_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>content <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llmessage-success-page"><p>Success message text</p>
+</div> <p><em>(default: Action successfully complete)</em></p></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_transition">transition(title, message)</h3>
+<div class="transition"><div class="govright-llservices-llmessage-transition-page"><p>Display a site message as a separate page.</p>
+<p>Transitions to the site message page without changing the url.
+Requires the <code>site.message</code> route to be set up.</p>
+<p>Example route:</p>
+<pre class="prettyprint linenums">
+$stateProvider.state('site.message', {
+  params: { title: undefined, message: undefined },
+  templateUrl: '/templates/site/message.html',
+  controller: 'StaticPageController'
+})
+</pre>
+</div><h5 id="methods_transition_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>title</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llmessage-transition-page"><p>Title of the message</p>
+</div></td></tr><tr><td>message <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llmessage-transition-page"><p>Message text</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

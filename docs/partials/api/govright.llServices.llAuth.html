@@ -1,0 +1,150 @@
+<h1><code ng:non-bindable="">llAuth</code>
+<div><span class="hint">service in module <code ng:non-bindable="">govright.llServices</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="govright-llservices-llauth-page"><p>Login helper.</p>
+<ul>
+<li>Makes a login popup</li>
+<li>Handles API response and saves user data</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Login user via Facebook:</li>
+</ul>
+<pre class="prettyprint linenums">
+// SiteConfig.authUrl comes from json config
+var authUrl = SiteConfig.authUrl + '/' + $location.host();
+
+llAuth.socialLogin(authUrl).then(function() {
+  // do stuff with llAuth.currentUser
+  console.log( llAuth.currentUser );
+}).catch(function(err) {
+  // show login error message
+});
+</pre>
+<ul>
+<li>Login via loopback user credentials:</li>
+</ul>
+<pre class="prettyprint linenums">
+var username = 'test'; // Can be user email
+var password = 'test';
+
+llAuth.login(username, password).then(function() {
+  // do stuff with llAuth.currentUser
+  console.log( llAuth.currentUser );
+}).catch(function(err) {
+  // show login error message
+});
+</pre>
+<ul>
+<li>Top level controller snippet:</li>
+</ul>
+<pre class="prettyprint linenums">
+$scope.$on('auth:login', function() {
+  $scope.currentUser = llAuth.currentUser;
+});
+
+$scope.logout = function() {
+  llAuth.logout().then(function() {
+    $scope.currentUser = null;
+    $state.go('site.login'); // or something
+  });
+}
+</pre>
+<ul>
+<li>Restore user session</li>
+</ul>
+<pre class="prettyprint linenums">
+angular
+  .module('app')
+  .run(['llAuth', function(llAuth) {
+    llAuth.checkLogin().then(function() {
+      // do stuff with llAuth.currentUser
+      console.log( llAuth.currentUser );
+    }).catch(function() {
+      console.warn('Your login expired or something.');
+    });
+  }]);
+</pre>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_checklogin">checkLogin()</h3>
+<div class="checklogin"><div class="govright-llservices-llauth-checklogin-page"><p>Restore user session using cached LB/Facebook auth data.</p>
+<p>This is something that is typically called in the <code>run</code> block of the app
+to check if users have been logged in previous sessions and automatically log them in.
+Current user data becomes available in <code>llAuth.currentUser</code> in case of successful login.</p>
+<p><code>auth:login</code> event is broadcasted in case of successful login.</p>
+</div><h5 id="methods_checklogin_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-llservices-llauth-checklogin-page"><p>Login promise which is resolved with current user instance in case
+of successful login.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_initsocialhandler">initSocialHandler()</h3>
+<div class="initsocialhandler"><div class="govright-llservices-llauth-initsocialhandler-page"><p>Creates a <code>processAuthMessage</code> function on the <code>window</code> object which
+is called from the popup window to pass auth data to angular app.
+Is automatically called before social login if hasn&#39;t been initialised yet.</p>
+</div></div>
+</li>
+<li><h3 id="methods_login">login(user, password)</h3>
+<div class="login"><div class="govright-llservices-llauth-login-page"><p>Login user using LoopBack user credentials.
+Current user object becomes available on <code>llAuth.currentUser</code> in case of successful login.</p>
+<p><code>auth:login</code> event is broadcasted in case of successful login.</p>
+</div><h5 id="methods_login_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>user</td><td><a href="" class="label type-hint type-hint-string">String</a><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-llservices-llauth-login-page"><p>Username or email or object like <code>{username: &#39;&#39;, password: &#39;&#39;}</code>
+or <code>{email: &#39;&#39;, password: &#39;&#39;}</code>.</p>
+</div></td></tr><tr><td>password <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llauth-login-page"><p>User password. Should be omitted if the first arg is object.</p>
+</div></td></tr></tbody></table><h5 id="methods_login_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-llservices-llauth-login-page"><p>Login promise which is resolved with login data in case
+of successful login.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_logout">logout()</h3>
+<div class="logout"><div class="govright-llservices-llauth-logout-page"><p>Logout user.</p>
+</div></div>
+</li>
+<li><h3 id="methods_setcurrentuser">setCurrentUser(data)</h3>
+<div class="setcurrentuser"><div class="govright-llservices-llauth-setcurrentuser-page"><p>Builds a user object from the auth payload and populates it on <code>llAuth.currentUser</code>.</p>
+</div><h5 id="methods_setcurrentuser_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-llservices-llauth-setcurrentuser-page"><p>Corpus payload object or <code>User.login()</code> result</p>
+</div></td></tr></tbody></table><h5 id="methods_setcurrentuser_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-llservices-llauth-setcurrentuser-page"><p>User object.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_sociallogin">socialLogin(authUrl)</h3>
+<div class="sociallogin"><div class="govright-llservices-llauth-sociallogin-page"><p>Login user via Facebook. Creates the login popup and starts the login process.
+Current user object becomes available
+on <code>llAuth.currentUser</code> in case of successful login.</p>
+<p><code>auth:login</code> event is broadcasted in case of successful login.</p>
+</div><h5 id="methods_sociallogin_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>authUrl</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-llservices-llauth-sociallogin-page"><p>Login popup url.</p>
+</div></td></tr></tbody></table><h5 id="methods_sociallogin_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-llservices-llauth-sociallogin-page"><p>Login promise which is resolved with login data in case
+of successful login.</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_currentuser">currentUser</h3>
+<div class="currentuser"><div class="govright-llservices-llauth-currentuser-page"><p>Current user instance. Is <code>undefined</code> by default, populated on successful login.</p>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member event"><h2 id="events">Events</h2>
+<ul class="events"><li><h3 id="events_login">login</h3>
+<div class="login"><div class="auth-page auth-login-page"><p><code>auth:login</code> is broadcasted on successful login. Example subscription:</p>
+<p><code>$scope.$on(&#39;auth:login&#39;, function() {...});</code></p>
+</div><div class="inline"><h4 id="events_login_type">Type:</h4>
+<div class="type">broadcast</div>
+</div>
+<div class="inline"></div>
+</div>
+</li>
+<li><h3 id="events_logout">logout</h3>
+<div class="logout"><div class="auth-page auth-logout-page"><p><code>auth:logout</code> is broadcasted when logout is done. Example subscription:</p>
+<p><code>$scope.$on(&#39;auth:logout&#39;, function() {...});</code></p>
+</div><div class="inline"><h4 id="events_logout_type">Type:</h4>
+<div class="type">broadcast</div>
+</div>
+<div class="inline"></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
