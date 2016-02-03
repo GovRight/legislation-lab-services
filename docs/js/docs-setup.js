@@ -10,7 +10,7 @@ NG_DOCS={
       "type": "overview",
       "moduleName": "govright.llServices",
       "shortDescription": "The govright.llServices module provides services that encapsulate",
-      "keywords": "api common corpus encapsulate govright interacting llservices module overview services techniques"
+      "keywords": "add angular angularjs api common corpus corpusservices dependencies dependency dist encapsulate example gettext govright html include interacting js ll llservices module myapp ng-app ngmaterial org overview rocketeer router script services src techniques ui var"
     },
     {
       "section": "api",
@@ -19,7 +19,7 @@ NG_DOCS={
       "type": "object",
       "moduleName": "govright.llServices",
       "shortDescription": "Login helper.",
-      "keywords": "$location $on $scope $state angular api app arg authurl automatically block broadcast broadcasted builds cached called case catch check checklogin config console controller corpus creates credentials current currentuser data default email error event examples expired facebook function govright handles hasn helper host initialised initsocialhandler instance json lb level llauth llservices log logged login logout loopback message method module null object pass password payload populated populates popup previous process processauthmessage promise property resolved response restore result saves session sessions setcurrentuser site siteconfig snippet social sociallogin starts stuff successful test top typically undefined url user username users var warn window"
+      "keywords": "$location $on $q $rootscope $scope $state $window angular api app arg authurl automatically block broadcast broadcasted builds cached called case catch check checklogin config console controller corpus creates credentials current currentuser data default email error event examples expired facebook function govright handles hasn helper host initialised initsocialhandler instance json lb level llauth llfacebook llservices log logged login logout loopback loopbackauth message method module null object pass password payload populated populates popup previous process processauthmessage promise property resolved response restore result saves session sessions setcurrentuser site siteconfig snippet social sociallogin starts stuff successful test top typically undefined url user username users var warn window"
     },
     {
       "section": "api",
@@ -28,7 +28,7 @@ NG_DOCS={
       "type": "object",
       "moduleName": "govright.llServices",
       "shortDescription": "Facebook auth/posting helper.",
-      "keywords": "access accesstoken action api app appid behalf clearstorage config current data delete facebook facebookdata fb future getaccesstoken getappid getnamespace govright helper init initialise initialization llfacebook llservices loadaccessdata method namespace null object post postaction posting props remember result save saveaccessdata saves saving sessions storage store stored token true user"
+      "keywords": "$q $window access accesstoken action api app appid behalf clearstorage config current data delete facebook facebookdata fb future getaccesstoken getappid getnamespace govright helper init initialise initialization llfacebook llservices loadaccessdata method namespace null object post postaction posting props remember result save saveaccessdata saves saving sessions storage store stored token true user"
     },
     {
       "section": "api",
@@ -37,7 +37,7 @@ NG_DOCS={
       "type": "object",
       "moduleName": "govright.llServices",
       "shortDescription": "Locale helper.",
-      "keywords": "angular api app application apply arguments array check checked code codes controller current defaullocale default defaultlocale detect determinelocalecode dir direction discussion en english example examples extended extendedlookup extract extracted false function getstring gettextcatalog govright helper instance isvalid key law list lllocale llservices locale localecode localedir locales localised lookups lookupstring ltr method module null object property returned set setcurrent setdefault setlocales startup string target text title translation true typically valid"
+      "keywords": "$rootscope angular api app application apply arguments array check checked code codes controller current defaullocale default defaultlocale detect determinelocalecode dir direction discussion en english example examples extended extendedlookup extract extracted false function getstring gettext gettextcatalog govright helper instance isvalid key law list lllocale llservices locale localecode localedir locales localised lookups lookupstring ltr method module null object property returned set setcurrent setdefault setlocales startup string target text title translation true typically valid"
     },
     {
       "section": "api",
@@ -46,7 +46,7 @@ NG_DOCS={
       "type": "object",
       "moduleName": "govright.llServices",
       "shortDescription": "Various site messages, like 404, dialog popups, success toast, etc.",
-      "keywords": "$stateprovider api button cancel canceled catch changing clicked close complete confirm content controller custom dialog display error error404 example govright html llmessage llservices message messages method object occurred params popups request requires route separate set site staticpagecontroller success templateurl text title toast transition transitions undefined url user"
+      "keywords": "$mddialog $mdtoast $state $stateprovider api button cancel canceled catch changing clicked close complete confirm content controller custom dialog display error error404 example govright html llmessage llservices message messages method ngmaterial object occurred params popups request requires route router separate set site staticpagecontroller success templateurl text title toast transition transitions ui undefined url user"
     }
   ],
   "apis": {
