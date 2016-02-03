@@ -33,13 +33,13 @@
        *
        * Example route:
        *
-       * ```
-       * .state('site.404', {
+       * <pre>
+       * $stateProvider.state('site.404', {
        *   params: { message: undefined },
        *   templateUrl: '/templates/site/404.html',
        *   controller: 'StaticPageController'
        * })
-       * ```
+       * </pre>
        *
        * @param {String=} message Custom message to display on the 404 page
        */
@@ -61,13 +61,13 @@
        *
        * Example route:
        *
-       * ```
-       * .state('site.message', {
+       * <pre>
+       * $stateProvider.state('site.message', {
        *   params: { title: undefined, message: undefined },
        *   templateUrl: '/templates/site/message.html',
        *   controller: 'StaticPageController'
        * })
-       * ```
+       * </pre>
        *
        * @param {String} title Title of the message
        * @param {String=} message Message text
@@ -144,13 +144,13 @@
        *
        * Example:
        *
-       * ```
+       * <pre>
        * llMessage.confirm().then(function() {
        *   // User clicked `Ok`
        * }).catch(function() {
        *   // User canceled
        * });
-       * ```
+       * </pre>
        *
        * @param {String=} [title=Are you sure?] Confirm message
        * @param {String=} [ok=Ok] `Ok` button text

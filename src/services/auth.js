@@ -17,7 +17,7 @@
  *
  * - Login user via Facebook:
  *
- * ```
+ * <pre>
  * // SiteConfig.authUrl comes from json config
  * var authUrl = SiteConfig.authUrl + '/' + $location.host();
  *
@@ -27,11 +27,11 @@
  * }).catch(function(err) {
  *   // show login error message
  * });
- * ```
+ * </pre>
  *
  * - Login via loopback user credentials:
  *
- * ```
+ * <pre>
  * var username = 'test'; // Can be user email
  * var password = 'test';
  *
@@ -41,11 +41,11 @@
  * }).catch(function(err) {
  *   // show login error message
  * });
- * ```
+ * </pre>
  *
  * - Top level controller snippet:
  *
- * ```
+ * <pre>
  * $scope.$on('auth:login', function() {
  *   $scope.currentUser = llAuth.currentUser;
  * });
@@ -56,11 +56,11 @@
  *     $state.go('site.login'); // or something
  *   });
  * }
- * ```
+ * </pre>
  *
  * - Restore user session
  *
- * ```
+ * <pre>
  * angular
  *   .module('app')
  *   .run(['llAuth', function(llAuth) {
@@ -71,7 +71,7 @@
  *       console.warn('Your login expired or something.');
  *     });
  *   }]);
- * ```
+ * </pre>
  */
 (function() {
   angular

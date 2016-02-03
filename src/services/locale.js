@@ -15,25 +15,25 @@
  * - On app startup, set application default locale.
  * It will be used in extended lookups.
  *
- * ```
+ * <pre>
  * angular
  *   .module('app')
  *   .run(['llLocale', function(Locale) {
  *     Locale.setDefault('en');
  *   }]);
- * ```
+ * </pre>
  *
  * - Get law title in the current locale:
  *
- * ```
+ * <pre>
  * llLocale.property(law, 'title');
- * ```
+ * </pre>
  *
  * - Get law title in any available locale:
  *
- * ```
+ * <pre>
  * llLocale.property(law, 'title', true);
- * ```
+ * </pre>
  *
  */
 (function() {
@@ -89,15 +89,15 @@
        *
        * @description
        *
-       * Current locale (object).
+       * Current locale (object). Example:
        *
-       * ```
+       * <pre>
        * {
-       *   code: <String>,
-       *   name: <String>,
-       *   dir: <String>
+       *   code: 'en',
+       *   name: 'English',
+       *   dir: 'ltr'
        * }
-       * ```
+       * </pre>
        */
       current: syncLocale(new LocaleInstance()),
 

@@ -32,7 +32,7 @@
  *
  * - Login user via Facebook:
  *
- * ```
+ * <pre>
  * // SiteConfig.authUrl comes from json config
  * var authUrl = SiteConfig.authUrl + '/' + $location.host();
  *
@@ -42,11 +42,11 @@
  * }).catch(function(err) {
  *   // show login error message
  * });
- * ```
+ * </pre>
  *
  * - Login via loopback user credentials:
  *
- * ```
+ * <pre>
  * var username = 'test'; // Can be user email
  * var password = 'test';
  *
@@ -56,11 +56,11 @@
  * }).catch(function(err) {
  *   // show login error message
  * });
- * ```
+ * </pre>
  *
  * - Top level controller snippet:
  *
- * ```
+ * <pre>
  * $scope.$on('auth:login', function() {
  *   $scope.currentUser = llAuth.currentUser;
  * });
@@ -71,11 +71,11 @@
  *     $state.go('site.login'); // or something
  *   });
  * }
- * ```
+ * </pre>
  *
  * - Restore user session
  *
- * ```
+ * <pre>
  * angular
  *   .module('app')
  *   .run(['llAuth', function(llAuth) {
@@ -86,7 +86,7 @@
  *       console.warn('Your login expired or something.');
  *     });
  *   }]);
- * ```
+ * </pre>
  */
 (function() {
   angular
@@ -672,25 +672,25 @@
  * - On app startup, set application default locale.
  * It will be used in extended lookups.
  *
- * ```
+ * <pre>
  * angular
  *   .module('app')
  *   .run(['llLocale', function(Locale) {
  *     Locale.setDefault('en');
  *   }]);
- * ```
+ * </pre>
  *
  * - Get law title in the current locale:
  *
- * ```
+ * <pre>
  * llLocale.property(law, 'title');
- * ```
+ * </pre>
  *
  * - Get law title in any available locale:
  *
- * ```
+ * <pre>
  * llLocale.property(law, 'title', true);
- * ```
+ * </pre>
  *
  */
 (function() {
@@ -746,15 +746,15 @@
        *
        * @description
        *
-       * Current locale (object).
+       * Current locale (object). Example:
        *
-       * ```
+       * <pre>
        * {
-       *   code: <String>,
-       *   name: <String>,
-       *   dir: <String>
+       *   code: 'en',
+       *   name: 'English',
+       *   dir: 'ltr'
        * }
-       * ```
+       * </pre>
        */
       current: syncLocale(new LocaleInstance()),
 
@@ -1051,13 +1051,13 @@
        *
        * Example route:
        *
-       * ```
-       * .state('site.404', {
+       * <pre>
+       * $stateProvider.state('site.404', {
        *   params: { message: undefined },
        *   templateUrl: '/templates/site/404.html',
        *   controller: 'StaticPageController'
        * })
-       * ```
+       * </pre>
        *
        * @param {String=} message Custom message to display on the 404 page
        */
@@ -1079,13 +1079,13 @@
        *
        * Example route:
        *
-       * ```
-       * .state('site.message', {
+       * <pre>
+       * $stateProvider.state('site.message', {
        *   params: { title: undefined, message: undefined },
        *   templateUrl: '/templates/site/message.html',
        *   controller: 'StaticPageController'
        * })
-       * ```
+       * </pre>
        *
        * @param {String} title Title of the message
        * @param {String=} message Message text
@@ -1162,13 +1162,13 @@
        *
        * Example:
        *
-       * ```
+       * <pre>
        * llMessage.confirm().then(function() {
        *   // User clicked `Ok`
        * }).catch(function() {
        *   // User canceled
        * });
-       * ```
+       * </pre>
        *
        * @param {String=} [title=Are you sure?] Confirm message
        * @param {String=} [ok=Ok] `Ok` button text
