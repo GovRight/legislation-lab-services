@@ -40,14 +40,14 @@ for examples and more detailed description of each service.
 
 First install your local project's npm tools:
 
-```
+```bash
 # First install all the npm/bower packages:
 npm install
 ```
 
 Then run the gulp tasks:
 
-```
+```bash
 # To build packaged js files from sources
 gulp
 
@@ -61,7 +61,7 @@ gulp serve
 
 Finally, test the package:
 
-```
+```bash
 # To run tests from `/test/specs` with npm
 npm test
 ```
