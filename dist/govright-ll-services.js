@@ -4,14 +4,40 @@
  * @ngdoc overview
  * @name govright.llServices
  * @module govright.llServices
+ *
  * @description
  *
  * The `govright.llServices` module provides services that encapsulate
  * common techniques of interacting with the GovRight Corpus API
+ *
+ * ## Module dependencies
+ *
+ * * [`govright.corpusServices`](https://github.com/GovRight/corpus-services)
+ * * [`ui.router`](https://github.com/angular-ui/ui-router)
+ * * [`gettext`](https://angular-gettext.rocketeer.be/)
+ * * [`ngMaterial`](https://material.angularjs.org/latest/)
+ *
+ * ## Example
+ *
+ * <pre>
+ <!doctype html>
+ <html ng-app="myApp">
+   <head>
+     <script src="js/angular.js"></script>
+     <!-- Include the ll services script -->
+     <script src="dist/govright-ll-services.js"></script>
+     <script>
+       // ...and add 'govright.llServices' as a dependency
+       var myApp = angular.module('myApp', ['govright.llServices']);
+     </script>
+   </head>
+   <body></body>
+ </html>
+ * </pre>
  */
 (function() {
   angular
-    .module('govright.llServices', ['govright.corpusServices', 'ui.router', 'gettext']);
+    .module('govright.llServices', ['govright.corpusServices', 'ui.router', 'gettext', 'ngMaterial']);
 }());
 
 
@@ -19,7 +45,13 @@
  * @ngdoc object
  * @name govright.llServices.llAuth
  * @header govright.llServices.llAuth
- * @object
+ *
+ * @requires $window
+ * @requires $q
+ * @requires $rootScope
+ * @requires LoopBackAuth
+ * @requires User
+ * @requires govright.llServices.llFacebook
  *
  * @description
  *
@@ -432,6 +464,9 @@
  * @header govright.llServices.llFacebook
  * @object
  *
+ * @requires $q
+ * @requires $window
+ *
  * @description
  *
  * Facebook auth/posting helper.
@@ -662,6 +697,9 @@
  * @name govright.llServices.llLocale
  * @header govright.llServices.llLocale
  * @object
+ *
+ * @requires $rootScope
+ * @requires gettext.gettextCatalog
  *
  * @description
  *
@@ -1023,6 +1061,10 @@
  * @name govright.llServices.llMessage
  * @header govright.llServices.llMessage
  * @object
+ *
+ * @requires ngMaterial.$mdToast
+ * @requires ngMaterial.$mdDialog
+ * @requires ui.router.$state
  *
  * @description
  *

@@ -4,7 +4,13 @@
  * @ngdoc object
  * @name govright.llServices.llAuth
  * @header govright.llServices.llAuth
- * @object
+ *
+ * @requires $window
+ * @requires $q
+ * @requires $rootScope
+ * @requires LoopBackAuth
+ * @requires User
+ * @requires govright.llServices.llFacebook
  *
  * @description
  *

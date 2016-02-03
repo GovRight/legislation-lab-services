@@ -6,6 +6,10 @@
  * @header govright.llServices.llMessage
  * @object
  *
+ * @requires ngMaterial.$mdToast
+ * @requires ngMaterial.$mdDialog
+ * @requires ui.router.$state
+ *
  * @description
  *
  * Various site messages, like 404, dialog popups, success toast, etc.

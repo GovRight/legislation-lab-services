@@ -6,6 +6,9 @@
  * @header govright.llServices.llLocale
  * @object
  *
+ * @requires $rootScope
+ * @requires gettext.gettextCatalog
+ *
  * @description
  *
  * Locale helper.
