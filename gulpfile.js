@@ -34,9 +34,10 @@ gulp.task('docs-html', function () {
       title: 'API Reference'
     }
   }).pipe($.ngdocs.process({
+    startPage: '/api/govright.llServices',
     html5Mode: false,
     title: 'GovRight Legislation Lab Services',
-    styles: ['ngdocs_assets/docs.css'],
+    styles: [ 'ngdocs_assets/docs.css' ],
     navTemplate: './ngdocs_assets/navbar.html'
   }))
     .pipe(gulp.dest('./docs'));
@@ -57,6 +58,7 @@ gulp.task('serve', function () {
     './docs/css/**/*'
   ]).on('change', reload);
   gulp.watch([
+    './dist/govright-ll-services.js',
     './ngdocs_assets/**/*'
   ], ['docs']);
   gulp.watch([
