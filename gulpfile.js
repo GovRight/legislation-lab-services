@@ -43,7 +43,7 @@ gulp.task('docs-html', function () {
     .pipe(gulp.dest('./docs'));
 });
 
-gulp.task('serve', function () {
+gulp.task('serve', ['docs'], function () {
   browserSync({
     notify: false,
     port: 9000,
