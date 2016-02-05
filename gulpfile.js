@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var spawn = require('child_process').spawn;
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -47,8 +46,7 @@ gulp.task('serve', ['docs'], function () {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['./docs'],
-      routes: {'/bower_components': 'bower_components'}
+      baseDir: ['./docs']
     }
   });
   gulp.watch([
