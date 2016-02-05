@@ -37,7 +37,7 @@ gulp.task('docs-html', function () {
     startPage: '/api/govright.llServices',
     html5Mode: false,
     title: 'GovRight Legislation Lab Services',
-    styles: [ 'ngdocs_assets/docs.css' ],
+    styles: [ 'bower_components/gulp-ngdocs-supplemental/dist/style.css' ],
     navTemplate: './ngdocs_assets/navbar.html'
   }))
     .pipe(gulp.dest('./docs'));
