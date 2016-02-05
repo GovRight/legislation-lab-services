@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var spawn = require('child_process').spawn;
-var chalk = require('chalk');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
