@@ -22,10 +22,11 @@
     "angular-ui-router": "~0.2.13",
     "angular-material": "~1.0.4",
     "angular-resource": "^1.4.0",
-    "govright-corpus-services": "^1.0.0"
+    "govright-corpus-services": "git@github.com:GovRight/corpus-services.git"
   },
   "devDependencies": {
-    "angular-mocks": ">= 1.3.0"
+    "angular-mocks": ">= 1.3.0",
+    "gulp-ngdocs-supplemental": "git@github.com:miletsky/gulp-ngdocs-supplemental.git"
   },
   "license": "MIT"
 }
