@@ -61,7 +61,7 @@ NG_DOCS={
       "js/marked.js"
     ],
     "styles": [
-      "css/ngdocs_assets/docs.css"
+      "css/bower_components/gulp-ngdocs-supplemental/dist/style.css"
     ],
     "title": "GovRight Legislation Lab Services",
     "html5Mode": false,
