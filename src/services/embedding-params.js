@@ -58,6 +58,18 @@
  *   }]);
  * </pre>
  */
+
+/**
+ * @ngdoc property
+ * @name govright.platformServices.grEmbeddingParams#isEmbeddedMode
+ * @propertyOf govright.platformServices.grEmbeddingParams
+ * @type {Boolean}
+ *
+ * @description
+ *
+ * Is either `true` or `false` and indicates if app is in embedded mode now.
+ */
+
 (function() {
   angular
     .module('govright.platformServices')
