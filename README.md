@@ -28,6 +28,8 @@ Add `govright.platformServices` module as a dependency to your main application 
 This will add the following services to your app:
 
 * [`grAuth`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grAuth)
+* [`grEmbeddingParams`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grEmbeddingParams) 
+(and [provider](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grEmbeddingParamsProvider))
 * [`grFacebook`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grFacebook)
 * [`grLocale`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grLocale)
 * [`grMessage`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grMessage)
