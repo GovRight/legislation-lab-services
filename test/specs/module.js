@@ -1,7 +1,7 @@
 /* global expect */
 'use strict';
 
-describe('platformServices module deps', function() {
+describe('Module and deps', function() {
   [
     'govright.platformServices',
     'govright.corpusServices',

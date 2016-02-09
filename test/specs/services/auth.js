@@ -1,7 +1,7 @@
 /* global expect */
 'use strict';
 
-describe('llAuth service', function() {
+describe('grAuth', function() {
   var Auth;
 
   beforeEach(module('govright.platformServices'));
@@ -10,9 +10,11 @@ describe('llAuth service', function() {
     Auth = _grAuth_;
   }));
 
-  it('should register `processAuthMessage` handler on the window object', function() {
-    Auth.initSocialHandler();
-    expect(window.processAuthMessage).to.be.a('function');
-    expect(window.processAuthMessage.length).to.equal(1);
+  describe('#initSocialHandler()', function() {
+    it('should register `processAuthMessage` handler on the window object', function() {
+      Auth.initSocialHandler();
+      expect(window.processAuthMessage).to.be.a('function');
+      expect(window.processAuthMessage.length).to.equal(1);
+    });
   });
 });
