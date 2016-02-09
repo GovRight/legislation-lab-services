@@ -14,7 +14,7 @@ Add `govright.platformServices` module as a dependency to your main application 
 <html ng-app="myApp">
  <head>
    <script src="js/angular.js"></script>
-   <!-- Include the ll services script -->
+   <!-- Include the platform services script -->
    <script src="dist/govright-ll-services.js"></script>
    <script>
      // ...and add 'govright.platformServices' as a dependency
@@ -27,10 +27,10 @@ Add `govright.platformServices` module as a dependency to your main application 
 
 This will add the following services to your app:
 
-* `llAuth`
-* `llFacebook`
-* `llLocale`
-* `llMessage`
+* [`grAuth`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grAuth)
+* [`grFacebook`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grFacebook)
+* [`grLocale`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grLocale)
+* [`grMessage`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grMessage)
 
 ## Further reading
 
