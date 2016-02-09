@@ -1,0 +1,30 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><div class="govright-platformservices-page"><p>The <code>govright.platformServices</code> module provides services that encapsulate
+common techniques of interacting with the GovRight Corpus API</p>
+<h3 id="module-dependencies" id="module-dependencies">Module dependencies</h3>
+<ul>
+<li><a href="https://github.com/GovRight/corpus-services"><code>govright.corpusServices</code></a></li>
+<li><a href="https://github.com/angular-ui/ui-router"><code>ui.router</code></a></li>
+<li><a href="https://angular-gettext.rocketeer.be/"><code>gettext</code></a></li>
+<li><a href="https://material.angularjs.org/latest/"><code>ngMaterial</code></a></li>
+</ul>
+<h3 id="example" id="example">Example</h3>
+<pre class="prettyprint linenums">
+ &lt;!doctype html&gt;
+ &lt;html ng-app="myApp"&gt;
+   &lt;head&gt;
+     &lt;script src="js/angular.js"&gt;&lt;/script&gt;
+     &lt;!-- Include the platform services script --&gt;
+     &lt;script src="dist/govright-platform-services.js"&gt;&lt;/script&gt;
+     &lt;script&gt;
+       // ...and add 'govright.platformServices' as a dependency
+       var myApp = angular.module('myApp', ['govright.platformServices']);
+     &lt;/script&gt;
+   &lt;/head&gt;
+   &lt;body&gt;&lt;/body&gt;
+ &lt;/html&gt;
+</pre>
+</div></div>

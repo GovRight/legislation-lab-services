@@ -1,0 +1,147 @@
+<h1><code ng:non-bindable="">grLocale</code>
+<div><span class="hint">service in module <code ng:non-bindable="">govright.platformServices</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="govright-platformservices-grlocale-page"><p>Locale helper.</p>
+<p>Examples:</p>
+<ul>
+<li>On app startup, set application default locale.
+It will be used in extended lookups.</li>
+</ul>
+<pre class="prettyprint linenums">
+angular
+  .module('app')
+  .run(['grLocale', function(Locale) {
+    Locale.setDefault('en');
+  }]);
+</pre>
+<ul>
+<li>Get law title in the current locale:</li>
+</ul>
+<pre class="prettyprint linenums">
+grLocale.property(law, 'title');
+</pre>
+<ul>
+<li>Get law title in any available locale:</li>
+</ul>
+<pre class="prettyprint linenums">
+grLocale.property(law, 'title', true);
+</pre>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$rootScope">$rootScope</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/gettext.gettextCatalog">gettextCatalog</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_determinelocalecode">determineLocaleCode(instance, localeCode, extendedLookup)</h3>
+<div class="determinelocalecode"><div class="govright-platformservices-grlocale-determinelocalecode-page"><p>Check if instance has the specified locale, or any other available.</p>
+</div><h5 id="methods_determinelocalecode_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>instance</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grlocale-determinelocalecode-page"><p>Instance to check (law, discussion, etc)</p>
+</div></td></tr><tr><td>localeCode <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grlocale-determinelocalecode-page"><p>Locale code to check</p>
+</div></td></tr><tr><td>extendedLookup <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="govright-platformservices-grlocale-determinelocalecode-page"><p>If not set, only specified <code>localeCode</code> and
+<code>defaultLocale</code> are checked. If <code>true</code>, any available locale is returned.</p>
+</div></td></tr></tbody></table><h5 id="methods_determinelocalecode_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String|Null</a></td><td><div class="govright-platformservices-grlocale-determinelocalecode-page"><p>Locale code or null if no locale could not be extracted.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_extract">extract(target)</h3>
+<div class="extract"><div class="govright-platformservices-grlocale-extract-page"><p>Extract locale object from instance.</p>
+</div><h5 id="methods_extract_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>target</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grlocale-extract-page"><p>Instance to extract locale from.</p>
+</div></td></tr></tbody></table><h5 id="methods_extract_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grlocale-extract-page"><p>Locale object.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getstring">getString()</h3>
+<div class="getstring"><div class="govright-platformservices-grlocale-getstring-page"><p>Get string translation.</p>
+</div><h5 id="methods_getstring_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">*</a></td><td><div class="govright-platformservices-grlocale-getstring-page"><p><code>gettextCatalog.getString.apply(gettextCatalog, arguments)</code></p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_isvalid">isValid(locale)</h3>
+<div class="isvalid"><div class="govright-platformservices-grlocale-isvalid-page"><p>Check if locale code is valid (is in the list of available locales).</p>
+</div><h5 id="methods_isvalid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>locale</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grlocale-isvalid-page"><p>Locale code to check.</p>
+</div></td></tr></tbody></table><h5 id="methods_isvalid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="govright-platformservices-grlocale-isvalid-page"><p>Valid/Invalid</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_localedir">localeDir(instance, extendedLookup)</h3>
+<div class="localedir"><div class="govright-platformservices-grlocale-localedir-page"><p>Get locale direction.</p>
+</div><h5 id="methods_localedir_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>instance</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grlocale-localedir-page"><p>Instance to detect direction.</p>
+</div></td></tr><tr><td>extendedLookup <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="govright-platformservices-grlocale-localedir-page"><p>If false - only current locale code is checked. If true,
+any available locale is returned.</p>
+</div></td></tr></tbody></table><h5 id="methods_localedir_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grlocale-localedir-page"><p>Locale direction.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_locales">locales()</h3>
+<div class="locales"><div class="govright-platformservices-grlocale-locales-page"><p>Get list of available locales.</p>
+</div><h5 id="methods_locales_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array.&lt;Object&gt;</a></td><td><div class="govright-platformservices-grlocale-locales-page"><p>Array of locales.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_lookupstring">lookupString()</h3>
+<div class="lookupstring"><div class="govright-platformservices-grlocale-lookupstring-page"><p>-</p>
+</div></div>
+</li>
+<li><h3 id="methods_property">property(instance, key, extendedLookup)</h3>
+<div class="property"><div class="govright-platformservices-grlocale-property-page"><p>Get localised property from instance.</p>
+</div><h5 id="methods_property_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>instance</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grlocale-property-page"><p>Instance to extract locale from (law, discussion, etc.).</p>
+</div></td></tr><tr><td>key</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grlocale-property-page"><p>Property to get translation of (title, text, etc.).</p>
+</div></td></tr><tr><td>extendedLookup <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="govright-platformservices-grlocale-property-page"><p>If false - only current locale code is checked. If true,
+any available locale is returned.</p>
+</div></td></tr></tbody></table><h5 id="methods_property_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grlocale-property-page"><p>Locale object.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setcurrent">setCurrent(locale)</h3>
+<div class="setcurrent"><div class="govright-platformservices-grlocale-setcurrent-page"><p>Set current locale.</p>
+</div><h5 id="methods_setcurrent_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>locale</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grlocale-setcurrent-page"><p>New locale code.</p>
+</div></td></tr></tbody></table><h5 id="methods_setcurrent_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grlocale-setcurrent-page"><p>New locale object (name, dir, etc.).</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setdefault">setDefault(code)</h3>
+<div class="setdefault"><div class="govright-platformservices-grlocale-setdefault-page"><p>Set default locale. Typically, can be set in discussion
+controller to the discussion defaulLocale</p>
+</div><h5 id="methods_setdefault_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>code</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grlocale-setdefault-page"><p>Default locale code.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_setlocales">setLocales(codes)</h3>
+<div class="setlocales"><div class="govright-platformservices-grlocale-setlocales-page"><p>Set new list of locales.</p>
+</div><h5 id="methods_setlocales_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>codes</td><td><a href="" class="label type-hint type-hint-array">Array.&lt;String&gt;</a></td><td><div class="govright-platformservices-grlocale-setlocales-page"><p>Array of string locale codes.</p>
+</div></td></tr></tbody></table><h5 id="methods_setlocales_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array.&lt;Object&gt;</a></td><td><div class="govright-platformservices-grlocale-setlocales-page"><p>Array of new locales.</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_current">current</h3>
+<div class="current"><div class="govright-platformservices-grlocale-current-page"><p>Current locale (object). Example:</p>
+<pre class="prettyprint linenums">
+{
+  code: 'en',
+  name: 'English',
+  dir: 'ltr'
+}
+</pre>
+</div></div>
+</li>
+</ul>
+</div>
+<div class="member event"><h2 id="events">Events</h2>
+<ul class="events"><li><h3 id="events_changed">changed</h3>
+<div class="changed"><div class="locale-page locale-changed-page"><p><code>locale:changed</code> is broadcasted when current locale is changed. Example subscription:</p>
+<p><code>$scope.$on(&#39;locale:changed&#39;, function() {...});</code></p>
+</div><div class="inline"><h4 id="events_changed_type">Type:</h4>
+<div class="type">broadcast</div>
+</div>
+<div class="inline"></div>
+</div>
+</li>
+<li><h3 id="events_new-list">new-list</h3>
+<div class="new-list"><div class="locale-page locale-new-list-page"><p><code>locale:new-list</code> is broadcasted when locale list is changed. Example subscription:</p>
+<p><code>$scope.$on(&#39;locale:new-list&#39;, function() {...});</code></p>
+</div><div class="inline"><h4 id="events_new-list_type">Type:</h4>
+<div class="type">broadcast</div>
+</div>
+<div class="inline"></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

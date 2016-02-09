@@ -1,0 +1,70 @@
+<h1><code ng:non-bindable="">grFacebook</code>
+<div><span class="hint">service in module <code ng:non-bindable="">govright.platformServices</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="govright-platformservices-grfacebook-page"><p>Facebook auth/posting helper.</p>
+<ul>
+<li>Facebook app initialization</li>
+<li>Posting to the Facebook app</li>
+<li>Saving/retrieving facebook auth data</li>
+</ul>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$window">$window</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_clearstorage">clearStorage()</h3>
+<div class="clearstorage"><div class="govright-platformservices-grfacebook-clearstorage-page"><p>Delete stored Facebook access data.</p>
+</div></div>
+</li>
+<li><h3 id="methods_getaccesstoken">getAccessToken()</h3>
+<div class="getaccesstoken"><div class="govright-platformservices-grfacebook-getaccesstoken-page"><p>Get current user&#39;s access token</p>
+</div><h5 id="methods_getaccesstoken_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grfacebook-getaccesstoken-page"><p>Current user&#39;s access token or null</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getappid">getAppId()</h3>
+<div class="getappid"><div class="govright-platformservices-grfacebook-getappid-page"><p>Get current Facebook app id</p>
+</div><h5 id="methods_getappid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grfacebook-getappid-page"><p>Current app id or null</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_getnamespace">getNamespace()</h3>
+<div class="getnamespace"><div class="govright-platformservices-grfacebook-getnamespace-page"><p>Get current Facebook app namespace</p>
+</div><h5 id="methods_getnamespace_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grfacebook-getnamespace-page"><p>Current app namespace or null</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_init">init(config)</h3>
+<div class="init"><div class="govright-platformservices-grfacebook-init-page"><p>Initialise Facebook app with FB.init()</p>
+</div><h5 id="methods_init_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>config <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grfacebook-init-page"><p>FB.init() config object</p>
+</div></td></tr></tbody></table><h5 id="methods_init_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grfacebook-init-page"><p>FB.init() result.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_loadaccessdata">loadAccessData()</h3>
+<div class="loadaccessdata"><div class="govright-platformservices-grfacebook-loadaccessdata-page"><p>Get current Facebook access data</p>
+</div><h5 id="methods_loadaccessdata_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grfacebook-loadaccessdata-page"><p>Object with following props</p>
+<ul>
+<li><code>appId</code> - Facebook app id</li>
+<li><code>namespace</code> - Facebook app namespace</li>
+<li><code>accessToken</code> - user access token</li>
+</ul>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_postaction">postAction(action, data)</h3>
+<div class="postaction"><div class="govright-platformservices-grfacebook-postaction-page"><p>Post action to Facebook on user&#39;s behalf</p>
+</div><h5 id="methods_postaction_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>action</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="govright-platformservices-grfacebook-postaction-page"><p>Facebook app action</p>
+</div></td></tr><tr><td>data</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grfacebook-postaction-page"><p>Data to post</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_saveaccessdata">saveAccessData(facebookData, remember)</h3>
+<div class="saveaccessdata"><div class="govright-platformservices-grfacebook-saveaccessdata-page"><p>Save Facebook access data to storage to use in the future</p>
+</div><h5 id="methods_saveaccessdata_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>facebookData</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grfacebook-saveaccessdata-page"><p>Access data to store.</p>
+</div></td></tr><tr><td>remember <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="govright-platformservices-grfacebook-saveaccessdata-page"><p>If <code>true</code> - saves data for future sessions.</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>

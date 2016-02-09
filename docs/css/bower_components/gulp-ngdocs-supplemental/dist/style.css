@@ -45,3 +45,21 @@
     float: none;
   }
 }
+
+.form-search .well .nav-header a {
+  display: block;
+  word-wrap: break-word;
+}
+.form-search .well .guide {
+  float: none;
+}
+.nav-header.module .guide {
+  padding-bottom: 0;
+}
+.nav-header.module .code {
+  padding-top: 0;
+}
+
+.form-search .code {
+  font-size: 12px;
+}
