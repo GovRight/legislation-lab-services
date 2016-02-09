@@ -1,0 +1,42 @@
+<h1><code ng:non-bindable="">grEmbeddingParams</code>
+<div><span class="hint">service in module <code ng:non-bindable="">govright.platformServices</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="govright-platformservices-grembeddingparams-page"><p>Is a plain object of embedding parameters which are passed from the outside of the app
+through root element data attributes (<code>data-*</code>).</p>
+<p>Important notes:</p>
+<ul>
+<li>Returned value always has the <code>isEmbeddedMode</code> property which is either true or false
+and indicates if app is in embedded mode now.</li>
+<li>The <code>query</code> (<code>data-query=&quot;&quot;</code>) param is treated in a special way and can be specified either
+as query or as json object and is parsed into a plain object.</li>
+</ul>
+<p><br>
+For example, following embedded app:</p>
+<pre class="prettyprint linenums">
+&lt;div ng-app="myApp" data-app-port="9000" data-locale="en" data-query="test=me&lets=go"&gt;&lt;/div&gt;
+</pre>
+<p>Will produce the following embedded params:</p>
+<pre class="prettyprint linenums">
+angular
+  .module('myApp')
+  .controller('MyController', ['grEmbeddingParams', function(EmbeddingParams) {
+    console.log(EmbeddingParams);
+
+    /* Outputs the following:
+    {
+       isEmbeddedMode: true,
+       appPort: '9000',
+       locale: 'en',
+       query: {
+         test: 'me',
+         lets: 'go'
+       }
+     } * /
+
+  }]);
+</pre>
+</div></div>
+</div>

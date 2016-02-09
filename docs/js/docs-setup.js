@@ -23,6 +23,24 @@ NG_DOCS={
     },
     {
       "section": "api",
+      "id": "govright.platformServices.grEmbeddingParams",
+      "shortName": "govright.platformServices.grEmbeddingParams",
+      "type": "object",
+      "moduleName": "govright.platformServices",
+      "shortDescription": "Is a plain object of embedding parameters which are passed from the outside of the app",
+      "keywords": "angular api app appport attributes console controller data data- data-app-port data-locale data-query element embedded embedding en example false function govright grembeddingparams indicates isembeddedmode json locale log mode module myapp mycontroller ng-app notes object outputs param parameters params parsed passed plain platformservices produce property query returned root special test treated true"
+    },
+    {
+      "section": "api",
+      "id": "govright.platformServices.grEmbeddingParamsProvider",
+      "shortName": "govright.platformServices.grEmbeddingParamsProvider",
+      "type": "object",
+      "moduleName": "govright.platformServices",
+      "shortDescription": "This provider enables setting a custom app root on the app startup and getting",
+      "keywords": "$rootelement $rootelementprovider access angular api app application appport attributes called config custom data data- data-app-port data-locale data-query defaults dom element embedded embedding embeddingprovider en enables example false function getparams govright grembeddingparamsprovider indicates isembeddedmode json locale method mode module myapp ng-app notes object param parameters params parsed passed plain platformservices produce property provider query returned returns root rootelement set setapproot setting special stage startup test treated true"
+    },
+    {
+      "section": "api",
       "id": "govright.platformServices.grFacebook",
       "shortName": "govright.platformServices.grFacebook",
       "type": "object",

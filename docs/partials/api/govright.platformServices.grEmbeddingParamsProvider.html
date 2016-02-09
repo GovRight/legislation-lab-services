@@ -1,0 +1,61 @@
+<h1><code ng:non-bindable="">grEmbeddingParamsProvider</code>
+<div><span class="hint">service in module <code ng:non-bindable="">govright.platformServices</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="govright-platformservices-grembeddingparamsprovider-page"><p>This provider enables setting a custom app root on the app startup and getting
+access to embedding params passed from the outside of the app.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$rootElementProvider">$rootElementProvider</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getparams">getParams()</h3>
+<div class="getparams"><div class="govright-platformservices-grembeddingparamsprovider-getparams-page"><p>Returns application embedding parameters which are passed from the outside of the app
+through root element data attributes (<code>data-*</code>).</p>
+<p>Important notes:</p>
+<ul>
+<li>Returned value always has the <code>isEmbeddedMode</code> property which is either true or false
+and indicates if app is in embedded mode now.</li>
+<li>The <code>query</code> (<code>data-query=&quot;&quot;</code>) param is treated in a special way and can be specified either
+as query or as json object and is parsed into a plain object.</li>
+</ul>
+<p><br>
+For example, following embedded app:</p>
+<pre class="prettyprint linenums">
+&lt;div ng-app="myApp" data-app-port="9000" data-locale="en" data-query="test=me&lets=go"&gt;&lt;/div&gt;
+</pre>
+<p>Will produce the following embedded params:</p>
+<pre class="prettyprint linenums">
+{
+  isEmbeddedMode: true,
+  appPort: '9000',
+  locale: 'en',
+  query: {
+    test: 'me',
+    lets: 'go'
+  }
+}
+</pre>
+</div><h5 id="methods_getparams_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grembeddingparamsprovider-getparams-page"><p>Plain object of application embedding parameters.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_setapproot">setAppRoot(rootElement)</h3>
+<div class="setapproot"><div class="govright-platformservices-grembeddingparamsprovider-setapproot-page"><p>Set an app root element. Root element defaults to angular <code>$rootElement</code>
+if this method was not called on the app config stage. Example:</p>
+<pre class="prettyprint linenums">
+angular
+  .module('myApp')
+  .config(['$rootElementProvider', 'grEmbeddingParamsProvider',
+    function($rootElementProvider, EmbeddingProvider) {
+      EmbeddingProvider.setAppRoot($rootElementProvider);
+  });
+</pre>
+</div><h5 id="methods_setapproot_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>rootElement</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grembeddingparamsprovider-setapproot-page"><p>Root element, can be DOM element, angular element or <code>$rootElementProvider</code></p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+</div>
