@@ -2,7 +2,7 @@
 
 The `govright.llServices` module provides services that encapsulate
 common techniques of interacting with the GovRight Corpus API.
-Check the [documentation](http://govright.github.io/legislation-lab-services/docs/#/api/govright.llServices)
+Check the [documentation](http://govright.github.io/platform-services/docs/#/api/govright.platformServices)
 for detailed API reference.
 
 ## Usage
