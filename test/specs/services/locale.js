@@ -1,16 +1,18 @@
 /* global expect */
 'use strict';
 
-describe('llLocale service', function() {
+describe('grLocale', function() {
   var Locale;
 
-  beforeEach(module('govright.llServices'));
+  beforeEach(module('govright.platformServices'));
 
-  beforeEach(inject(function(_llLocale_) {
-    Locale = _llLocale_;
+  beforeEach(inject(function(_grLocale_) {
+    Locale = _grLocale_;
   }));
 
-  it('should consider random string as an invalid locale', function() {
-    expect(Locale.isValid('eng')).to.be.false;
+  describe('#isValid()', function() {
+    it('should consider random string as an invalid locale', function() {
+      expect(Locale.isValid('eng')).to.be.false;
+    });
   });
 });

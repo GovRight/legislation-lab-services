@@ -2,8 +2,8 @@
 
 /**
  * @ngdoc object
- * @name govright.llServices.llMessage
- * @header govright.llServices.llMessage
+ * @name govright.platformServices.grMessage
+ * @header govright.platformServices.grMessage
  * @object
  *
  * @requires ngMaterial.$mdToast
@@ -17,16 +17,16 @@
 
 (function () {
   angular
-    .module('govright.llServices')
-    .factory('llMessage', ['$mdToast', '$mdDialog', '$state', Message]);
+    .module('govright.platformServices')
+    .factory('grMessage', ['$mdToast', '$mdDialog', '$state', Message]);
 
   function Message($mdToast, $mdDialog, $state) {
     return {
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#error404
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#error404
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -53,8 +53,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#transition
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#transition
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -86,8 +86,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#success
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#success
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -106,8 +106,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#error
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#error
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -139,8 +139,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#confirm
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#confirm
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -149,7 +149,7 @@
        * Example:
        *
        * <pre>
-       * llMessage.confirm().then(function() {
+       * grMessage.confirm().then(function() {
        *   // User clicked `Ok`
        * }).catch(function() {
        *   // User canceled

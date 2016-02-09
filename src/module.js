@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc overview
- * @name govright.llServices
- * @module govright.llServices
+ * @name govright.platformServices
+ * @module govright.platformServices
  *
  * @description
  *
- * The `govright.llServices` module provides services that encapsulate
+ * The `govright.platformServices` module provides services that encapsulate
  * common techniques of interacting with the GovRight Corpus API
  *
  * ## Module dependencies
@@ -24,11 +24,11 @@
  <html ng-app="myApp">
    <head>
      <script src="js/angular.js"></script>
-     <!-- Include the ll services script -->
-     <script src="dist/govright-ll-services.js"></script>
+     <!-- Include the platform services script -->
+     <script src="dist/govright-platform-services.js"></script>
      <script>
-       // ...and add 'govright.llServices' as a dependency
-       var myApp = angular.module('myApp', ['govright.llServices']);
+       // ...and add 'govright.platformServices' as a dependency
+       var myApp = angular.module('myApp', ['govright.platformServices']);
      </script>
    </head>
    <body></body>
@@ -37,5 +37,5 @@
  */
 (function() {
   angular
-    .module('govright.llServices', ['govright.corpusServices', 'ui.router', 'gettext', 'ngMaterial']);
+    .module('govright.platformServices', ['govright.corpusServices', 'ui.router', 'gettext', 'ngMaterial']);
 }());

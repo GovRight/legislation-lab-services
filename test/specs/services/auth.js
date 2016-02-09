@@ -1,18 +1,20 @@
 /* global expect */
 'use strict';
 
-describe('llAuth service', function() {
+describe('grAuth', function() {
   var Auth;
 
-  beforeEach(module('govright.llServices'));
+  beforeEach(module('govright.platformServices'));
 
-  beforeEach(inject(function(_llAuth_) {
-    Auth = _llAuth_;
+  beforeEach(inject(function(_grAuth_) {
+    Auth = _grAuth_;
   }));
 
-  it('should register `processAuthMessage` handler on the window object', function() {
-    Auth.initSocialHandler();
-    expect(window.processAuthMessage).to.be.a('function');
-    expect(window.processAuthMessage.length).to.equal(1);
+  describe('#initSocialHandler()', function() {
+    it('should register `processAuthMessage` handler on the window object', function() {
+      Auth.initSocialHandler();
+      expect(window.processAuthMessage).to.be.a('function');
+      expect(window.processAuthMessage.length).to.equal(1);
+    });
   });
 });

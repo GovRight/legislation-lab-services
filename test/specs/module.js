@@ -1,9 +1,9 @@
 /* global expect */
 'use strict';
 
-describe('llServices module deps', function() {
+describe('Module and deps', function() {
   [
-    'govright.llServices',
+    'govright.platformServices',
     'govright.corpusServices',
     'ngMaterial',
     'ui.router',

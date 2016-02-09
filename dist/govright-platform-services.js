@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc overview
- * @name govright.llServices
- * @module govright.llServices
+ * @name govright.platformServices
+ * @module govright.platformServices
  *
  * @description
  *
- * The `govright.llServices` module provides services that encapsulate
+ * The `govright.platformServices` module provides services that encapsulate
  * common techniques of interacting with the GovRight Corpus API
  *
  * ## Module dependencies
@@ -24,11 +24,11 @@
  <html ng-app="myApp">
    <head>
      <script src="js/angular.js"></script>
-     <!-- Include the ll services script -->
-     <script src="dist/govright-ll-services.js"></script>
+     <!-- Include the platform services script -->
+     <script src="dist/govright-platform-services.js"></script>
      <script>
-       // ...and add 'govright.llServices' as a dependency
-       var myApp = angular.module('myApp', ['govright.llServices']);
+       // ...and add 'govright.platformServices' as a dependency
+       var myApp = angular.module('myApp', ['govright.platformServices']);
      </script>
    </head>
    <body></body>
@@ -37,21 +37,21 @@
  */
 (function() {
   angular
-    .module('govright.llServices', ['govright.corpusServices', 'ui.router', 'gettext', 'ngMaterial']);
+    .module('govright.platformServices', ['govright.corpusServices', 'ui.router', 'gettext', 'ngMaterial']);
 }());
 
 
 /**
  * @ngdoc object
- * @name govright.llServices.llAuth
- * @header govright.llServices.llAuth
+ * @name govright.platformServices.grAuth
+ * @header govright.platformServices.grAuth
  *
  * @requires $window
  * @requires $q
  * @requires $rootScope
  * @requires LoopBackAuth
  * @requires User
- * @requires govright.llServices.llFacebook
+ * @requires govright.platformServices.grFacebook
  *
  * @description
  *
@@ -65,12 +65,11 @@
  * - Login user via Facebook:
  *
  * <pre>
- * // SiteConfig.authUrl comes from json config
- * var authUrl = SiteConfig.authUrl + '/' + $location.host();
+ * var authUrl = 'http://corpus.govright.org/auth/facebook/login/' + $location.host();
  *
- * llAuth.socialLogin(authUrl).then(function() {
- *   // do stuff with llAuth.currentUser
- *   console.log( llAuth.currentUser );
+ * grAuth.socialLogin(authUrl).then(function() {
+ *   // do stuff with grAuth.currentUser
+ *   console.log( grAuth.currentUser );
  * }).catch(function(err) {
  *   // show login error message
  * });
@@ -82,9 +81,9 @@
  * var username = 'test'; // Can be user email
  * var password = 'test';
  *
- * llAuth.login(username, password).then(function() {
- *   // do stuff with llAuth.currentUser
- *   console.log( llAuth.currentUser );
+ * grAuth.login(username, password).then(function() {
+ *   // do stuff with grAuth.currentUser
+ *   console.log( grAuth.currentUser );
  * }).catch(function(err) {
  *   // show login error message
  * });
@@ -94,11 +93,11 @@
  *
  * <pre>
  * $scope.$on('auth:login', function() {
- *   $scope.currentUser = llAuth.currentUser;
+ *   $scope.currentUser = grAuth.currentUser;
  * });
  *
  * $scope.logout = function() {
- *   llAuth.logout().then(function() {
+ *   grAuth.logout().then(function() {
  *     $scope.currentUser = null;
  *     $state.go('site.login'); // or something
  *   });
@@ -110,10 +109,10 @@
  * <pre>
  * angular
  *   .module('app')
- *   .run(['llAuth', function(llAuth) {
- *     llAuth.checkLogin().then(function() {
- *       // do stuff with llAuth.currentUser
- *       console.log( llAuth.currentUser );
+ *   .run(['grAuth', function(grAuth) {
+ *     grAuth.checkLogin().then(function() {
+ *       // do stuff with grAuth.currentUser
+ *       console.log( grAuth.currentUser );
  *     }).catch(function() {
  *       console.warn('Your login expired or something.');
  *     });
@@ -122,8 +121,8 @@
  */
 (function() {
   angular
-    .module('govright.llServices')
-    .factory('llAuth', Auth);
+    .module('govright.platformServices')
+    .factory('grAuth', Auth);
 
   Auth.$inject = [
     '$window',
@@ -131,7 +130,7 @@
     '$rootScope',
     'LoopBackAuth',
     'User',
-    'llFacebook'
+    'grFacebook'
   ];
 
   function Auth($window, $q, $rootScope, LoopBackAuth, User, Facebook) {
@@ -141,11 +140,11 @@
     var loginDeferred;
     var loginPopup;
 
-    var llAuth = {
+    var grAuth = {
       /**
        * @ngdoc property
-       * @name govright.llServices.llAuth#currentUser
-       * @propertyOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#currentUser
+       * @propertyOf govright.platformServices.grAuth
        *
        * @description
        *
@@ -155,8 +154,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#initSocialHandler
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#initSocialHandler
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
@@ -174,7 +173,7 @@
 
           if (!payload || !payload.corpusAccessToken) {
             console.error('LL Auth: invalid payload.');
-            llAuth.clearState();
+            grAuth.clearState();
             if (loginDeferred) {
               loginDeferred.reject('invalid-payload');
             }
@@ -183,7 +182,7 @@
 
           if (!payload.corpusAccessToken.id) {
             console.error('LL Auth: missing access token.');
-            llAuth.clearState();
+            grAuth.clearState();
             if (loginDeferred) {
               loginDeferred.reject('malformed-access-token');
             }
@@ -192,7 +191,7 @@
 
           if (!payload.facebookAccessData || !payload.facebookAccessData.appId) {
             console.error('LL Auth: malformed facebook data.');
-            llAuth.clearState();
+            grAuth.clearState();
             if (loginDeferred) {
               loginDeferred.reject('malformed-facebook-data');
             }
@@ -206,12 +205,12 @@
           Facebook.saveAccessData(payload.facebookAccessData, LoopBackAuth.rememberMe);
           Facebook.init();
 
-          llAuth.setCurrentUser(payload);
+          grAuth.setCurrentUser(payload);
 
           /**
            * @ngdoc event
            * @name auth:login
-           * @eventOf govright.llServices.llAuth
+           * @eventOf govright.platformServices.grAuth
            * @eventType broadcast
            *
            * @description
@@ -231,12 +230,12 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#setCurrentUser
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#setCurrentUser
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
-       * Builds a user object from the auth payload and populates it on `llAuth.currentUser`.
+       * Builds a user object from the auth payload and populates it on `grAuth.currentUser`.
        *
        * @param {Object} data Corpus payload object or `User.login()` result
        *
@@ -245,7 +244,7 @@
       setCurrentUser: function(data) {
         // Check if it's a `User.login()` result
         if(data.ttl && data.user && data.userId) {
-          llAuth.currentUser = {
+          grAuth.currentUser = {
             id: data.userId,
             facebookAccessData: {},
             profile: data.user.profile,
@@ -255,7 +254,7 @@
 
         // Else expect it to be a Corpus payload
         } else {
-          llAuth.currentUser = {
+          grAuth.currentUser = {
             id: data.corpusAccessToken.userId,
             facebookAccessData: data.facebookAccessData,
             profile: data.userProfile,
@@ -263,18 +262,18 @@
             email: data.email
           };
         }
-        return llAuth.currentUser;
+        return grAuth.currentUser;
       },
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#login
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#login
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
        * Login user using LoopBack user credentials.
-       * Current user object becomes available on `llAuth.currentUser` in case of successful login.
+       * Current user object becomes available on `grAuth.currentUser` in case of successful login.
        *
        * `auth:login` event is broadcasted in case of successful login.
        *
@@ -307,24 +306,24 @@
         }
 
         return User.login(credentials, function(data) {
-          llAuth.setCurrentUser(data);
+          grAuth.setCurrentUser(data);
           $rootScope.$broadcast('auth:login');
         }, function(err) {
-          llAuth.clearState();
+          grAuth.clearState();
           console.error('LL Auth: LB user login failed.', err);
         }).$promise;
       },
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#socialLogin
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#socialLogin
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
        * Login user via Facebook. Creates the login popup and starts the login process.
        * Current user object becomes available
-       * on `llAuth.currentUser` in case of successful login.
+       * on `grAuth.currentUser` in case of successful login.
        *
        * `auth:login` event is broadcasted in case of successful login.
        *
@@ -334,7 +333,7 @@
        * of successful login.
        */
       socialLogin: function(authUrl) {
-        llAuth.initSocialHandler();
+        grAuth.initSocialHandler();
 
         if (loginDeferred) {
           console.warn('LL Auth: login() called during pending login...');
@@ -365,8 +364,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#checkLogin
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#checkLogin
+       * @methodOf govright.platformServices.grAuth
        * @broadcasts auth:login
        *
        * @description
@@ -375,7 +374,7 @@
        *
        * This is something that is typically called in the `run` block of the app
        * to check if users have been logged in previous sessions and automatically log them in.
-       * Current user data becomes available in `llAuth.currentUser` in case of successful login.
+       * Current user data becomes available in `grAuth.currentUser` in case of successful login.
        *
        * `auth:login` event is broadcasted in case of successful login.
        *
@@ -385,7 +384,7 @@
       checkLogin: function() {
         if(User.isAuthenticated()) {
           return User.getCurrent(function (userData) {
-            llAuth.currentUser = {
+            grAuth.currentUser = {
               id: userData.id,
               profile: userData.profile,
               facebookAccessData: Facebook.loadAccessData(),
@@ -396,11 +395,11 @@
             $rootScope.$broadcast('auth:login');
           }, function (err) {
             console.error('LL Auth: session restore failed.', err);
-            llAuth.clearState();
+            grAuth.clearState();
           }).$promise;
         } else {
           return $q(function(resolve, reject) {
-            llAuth.clearState();
+            grAuth.clearState();
             reject(new Error('Session data is missing or expired.'));
           });
         }
@@ -410,13 +409,13 @@
           LoopBackAuth.clearUser();
           LoopBackAuth.clearStorage();
           Facebook.clearStorage();
-          llAuth.currentUser = null;
+          grAuth.currentUser = null;
       },
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#logout
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#logout
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
@@ -427,11 +426,11 @@
        */
       logout: function() {
         var clientLogout = function () {
-          llAuth.clearState();
+          grAuth.clearState();
           /**
            * @ngdoc event
            * @name auth:logout
-           * @eventOf govright.llServices.llAuth
+           * @eventOf govright.platformServices.grAuth
            * @eventType broadcast
            *
            * @description
@@ -453,15 +452,15 @@
       }
     };
 
-    return llAuth;
+    return grAuth;
   }
 }());
 
 
 /**
  * @ngdoc object
- * @name govright.llServices.llFacebook
- * @header govright.llServices.llFacebook
+ * @name govright.platformServices.grFacebook
+ * @header govright.platformServices.grFacebook
  * @object
  *
  * @requires $q
@@ -477,8 +476,8 @@
  */
 (function() {
   angular
-    .module('govright.llServices')
-    .factory('llFacebook', Facebook);
+    .module('govright.platformServices')
+    .factory('grFacebook', Facebook);
 
   Facebook.$inject = ['$q', '$window'];
 
@@ -502,8 +501,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#init
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#init
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -531,8 +530,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#postAction
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#postAction
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -581,8 +580,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#getAppId
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#getAppId
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -596,8 +595,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#getNamespace
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#getNamespace
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -611,8 +610,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#getAccessToken
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#getAccessToken
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -626,8 +625,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#saveAccessData
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#saveAccessData
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -648,8 +647,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#loadAccessData
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#loadAccessData
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -673,8 +672,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#clearStorage
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#clearStorage
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -694,8 +693,8 @@
 
 /**
  * @ngdoc object
- * @name govright.llServices.llLocale
- * @header govright.llServices.llLocale
+ * @name govright.platformServices.grLocale
+ * @header govright.platformServices.grLocale
  * @object
  *
  * @requires $rootScope
@@ -713,7 +712,7 @@
  * <pre>
  * angular
  *   .module('app')
- *   .run(['llLocale', function(Locale) {
+ *   .run(['grLocale', function(Locale) {
  *     Locale.setDefault('en');
  *   }]);
  * </pre>
@@ -721,19 +720,19 @@
  * - Get law title in the current locale:
  *
  * <pre>
- * llLocale.property(law, 'title');
+ * grLocale.property(law, 'title');
  * </pre>
  *
  * - Get law title in any available locale:
  *
  * <pre>
- * llLocale.property(law, 'title', true);
+ * grLocale.property(law, 'title', true);
  * </pre>
  *
  */
 (function() {
-  angular.module('govright.llServices')
-    .factory('llLocale', Locale);
+  angular.module('govright.platformServices')
+    .factory('grLocale', Locale);
 
   Locale.$inject = ['$rootScope', 'gettextCatalog'];
 
@@ -759,7 +758,7 @@
         /**
          * @ngdoc event
          * @name locale:changed
-         * @eventOf govright.llServices.llLocale
+         * @eventOf govright.platformServices.grLocale
          * @eventType broadcast
          *
          * @description
@@ -779,8 +778,8 @@
 
       /**
        * @ngdoc property
-       * @name govright.llServices.llLocale#current
-       * @propertyOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#current
+       * @propertyOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -798,8 +797,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#setCurrent
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#setCurrent
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -816,8 +815,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#setDefault
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#setDefault
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -832,8 +831,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#getString
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#getString
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -847,8 +846,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#lookupString
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#lookupString
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -864,8 +863,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#locales
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#locales
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -885,8 +884,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#isValid
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#isValid
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -902,8 +901,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#extract
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#extract
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -928,8 +927,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#property
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#property
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -951,8 +950,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#localeDir
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#localeDir
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -972,8 +971,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#setLocales
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#setLocales
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -998,7 +997,7 @@
         /**
          * @ngdoc event
          * @name locale:new-list
-         * @eventOf govright.llServices.llLocale
+         * @eventOf govright.platformServices.grLocale
          * @eventType broadcast
          *
          * @description
@@ -1014,8 +1013,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#determineLocaleCode
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#determineLocaleCode
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -1058,8 +1057,8 @@
 
 /**
  * @ngdoc object
- * @name govright.llServices.llMessage
- * @header govright.llServices.llMessage
+ * @name govright.platformServices.grMessage
+ * @header govright.platformServices.grMessage
  * @object
  *
  * @requires ngMaterial.$mdToast
@@ -1073,16 +1072,16 @@
 
 (function () {
   angular
-    .module('govright.llServices')
-    .factory('llMessage', ['$mdToast', '$mdDialog', '$state', Message]);
+    .module('govright.platformServices')
+    .factory('grMessage', ['$mdToast', '$mdDialog', '$state', Message]);
 
   function Message($mdToast, $mdDialog, $state) {
     return {
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#error404
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#error404
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -1109,8 +1108,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#transition
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#transition
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -1142,8 +1141,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#success
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#success
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -1162,8 +1161,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#error
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#error
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -1195,8 +1194,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llMessage#confirm
-       * @methodOf govright.llServices.llMessage
+       * @name govright.platformServices.grMessage#confirm
+       * @methodOf govright.platformServices.grMessage
        *
        * @description
        *
@@ -1205,7 +1204,7 @@
        * Example:
        *
        * <pre>
-       * llMessage.confirm().then(function() {
+       * grMessage.confirm().then(function() {
        *   // User clicked `Ok`
        * }).catch(function() {
        *   // User canceled

@@ -1,11 +1,13 @@
-# GovRight Legislation Lab Services
+# GovRight Platform Services
 
-The `govright.llServices` module provides services that encapsulate
+The `govright.platformServices` module provides services that encapsulate
 common techniques of interacting with the GovRight Corpus API.
+Check the [documentation](http://govright.github.io/platform-services/docs/#/api/govright.platformServices)
+for detailed API reference.
 
 ## Usage
 
-Add `govright.llServices` module as a dependency to your main application module. Example:
+Add `govright.platformServices` module as a dependency to your main application module. Example:
 
 ```html
 <!doctype html>
@@ -15,8 +17,8 @@ Add `govright.llServices` module as a dependency to your main application module
    <!-- Include the ll services script -->
    <script src="dist/govright-ll-services.js"></script>
    <script>
-     // ...and add 'govright.llServices' as a dependency
-     var myApp = angular.module('myApp', ['govright.llServices']);
+     // ...and add 'govright.platformServices' as a dependency
+     var myApp = angular.module('myApp', ['govright.platformServices']);
    </script>
  </head>
  <body></body>
@@ -32,7 +34,7 @@ This will add the following services to your app:
 
 ## Further reading
 
-* Check the [documentation](http://govright.github.io/legislation-lab-services/docs/#/api/govright.llServices)
+* Check the [documentation](http://govright.github.io/legislation-lab-services/docs/#/api/govright.platformServices)
 for examples and more detailed description of each service.
 * Check this [AngularJS boilerplate](https://github.com/GovRight/angular-bootstrap) by GovRight as an example 
 
@@ -49,7 +51,7 @@ Then run the gulp tasks:
 
 ```bash
 # To build packaged js files from sources
-gulp
+gulp js
 
 # To build html documentation from source ngdocs
 # Changes must be commited on `gh-pages` branch
@@ -57,6 +59,9 @@ gulp docs
 
 # To run local documentation server
 gulp serve
+
+# Build dist and docs
+gulp
 ```
 
 Finally, test the package:

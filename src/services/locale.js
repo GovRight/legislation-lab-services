@@ -2,8 +2,8 @@
 
 /**
  * @ngdoc object
- * @name govright.llServices.llLocale
- * @header govright.llServices.llLocale
+ * @name govright.platformServices.grLocale
+ * @header govright.platformServices.grLocale
  * @object
  *
  * @requires $rootScope
@@ -21,7 +21,7 @@
  * <pre>
  * angular
  *   .module('app')
- *   .run(['llLocale', function(Locale) {
+ *   .run(['grLocale', function(Locale) {
  *     Locale.setDefault('en');
  *   }]);
  * </pre>
@@ -29,19 +29,19 @@
  * - Get law title in the current locale:
  *
  * <pre>
- * llLocale.property(law, 'title');
+ * grLocale.property(law, 'title');
  * </pre>
  *
  * - Get law title in any available locale:
  *
  * <pre>
- * llLocale.property(law, 'title', true);
+ * grLocale.property(law, 'title', true);
  * </pre>
  *
  */
 (function() {
-  angular.module('govright.llServices')
-    .factory('llLocale', Locale);
+  angular.module('govright.platformServices')
+    .factory('grLocale', Locale);
 
   Locale.$inject = ['$rootScope', 'gettextCatalog'];
 
@@ -67,7 +67,7 @@
         /**
          * @ngdoc event
          * @name locale:changed
-         * @eventOf govright.llServices.llLocale
+         * @eventOf govright.platformServices.grLocale
          * @eventType broadcast
          *
          * @description
@@ -87,8 +87,8 @@
 
       /**
        * @ngdoc property
-       * @name govright.llServices.llLocale#current
-       * @propertyOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#current
+       * @propertyOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -106,8 +106,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#setCurrent
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#setCurrent
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -124,8 +124,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#setDefault
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#setDefault
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -140,8 +140,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#getString
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#getString
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -155,8 +155,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#lookupString
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#lookupString
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -172,8 +172,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#locales
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#locales
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -193,8 +193,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#isValid
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#isValid
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -210,8 +210,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#extract
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#extract
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -236,8 +236,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#property
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#property
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -259,8 +259,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#localeDir
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#localeDir
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -280,8 +280,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#setLocales
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#setLocales
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
@@ -306,7 +306,7 @@
         /**
          * @ngdoc event
          * @name locale:new-list
-         * @eventOf govright.llServices.llLocale
+         * @eventOf govright.platformServices.grLocale
          * @eventType broadcast
          *
          * @description
@@ -322,8 +322,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llLocale#determineLocaleCode
-       * @methodOf govright.llServices.llLocale
+       * @name govright.platformServices.grLocale#determineLocaleCode
+       * @methodOf govright.platformServices.grLocale
        *
        * @description
        *
