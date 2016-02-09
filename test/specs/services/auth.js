@@ -4,10 +4,10 @@
 describe('llAuth service', function() {
   var Auth;
 
-  beforeEach(module('govright.llServices'));
+  beforeEach(module('govright.platformServices'));
 
-  beforeEach(inject(function(_llAuth_) {
-    Auth = _llAuth_;
+  beforeEach(inject(function(_grAuth_) {
+    Auth = _grAuth_;
   }));
 
   it('should register `processAuthMessage` handler on the window object', function() {

@@ -13,7 +13,7 @@ gulp.task('js', function () {
   return gulp.src([
     './src/module.js',
     './src/services/*.js'
-  ]).pipe($.concat('govright-ll-services.js'))
+  ]).pipe($.concat('govright-platform-services.js'))
     .pipe($.replace(/'use strict';\n/g, ''))
     .pipe($.wrap('(function(){\'use strict\';\n<%= contents %>})();'))
     .pipe(gulp.dest('./dist'))
@@ -27,14 +27,14 @@ gulp.task('js', function () {
 gulp.task('docs-html', function () {
   return $.ngdocs.sections({
     api: {
-      glob: ['./dist/govright-ll-services.js'],
+      glob: ['./dist/govright-platform-services.js'],
       api: true,
       title: 'API Reference'
     }
   }).pipe($.ngdocs.process({
-    startPage: '/api/govright.llServices',
+    startPage: '/api/govright.platformServices',
     html5Mode: false,
-    title: 'GovRight Legislation Lab Services',
+    title: 'GovRight Platform Services',
     styles: [ 'bower_components/gulp-ngdocs-supplemental/dist/style.css' ],
     navTemplate: './ngdocs_assets/navbar.html'
   }))
@@ -50,12 +50,12 @@ gulp.task('serve', ['docs'], function () {
     }
   });
   gulp.watch([
-    './dist/govright-ll-services.js',
+    './dist/govright-platform-services.js',
     './docs/partials/**/*',
     './docs/css/**/*'
   ]).on('change', reload);
   gulp.watch([
-    './dist/govright-ll-services.js',
+    './dist/govright-platform-services.js',
     './ngdocs_assets/**/*'
   ], ['docs']);
   gulp.watch([
@@ -65,4 +65,6 @@ gulp.task('serve', ['docs'], function () {
 
 gulp.task('docs', ['docs-html'/*, 'docs-md'*/]);
 
-gulp.task('default', ['js']);
+gulp.task('default', ['js'], function() {
+  return gulp.start('docs');
+});

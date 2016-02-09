@@ -4,9 +4,9 @@
 describe('llFacebook service', function() {
   var Facebook;
 
-  beforeEach(module('govright.llServices'));
+  beforeEach(module('govright.platformServices'));
 
-  beforeEach(inject(function(_llFacebook__) {
-    Facebook = _llFacebook__;
+  beforeEach(inject(function(_grFacebook__) {
+    Facebook = _grFacebook__;
   }));
 });

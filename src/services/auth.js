@@ -2,15 +2,15 @@
 
 /**
  * @ngdoc object
- * @name govright.llServices.llAuth
- * @header govright.llServices.llAuth
+ * @name govright.platformServices.grAuth
+ * @header govright.platformServices.grAuth
  *
  * @requires $window
  * @requires $q
  * @requires $rootScope
  * @requires LoopBackAuth
  * @requires User
- * @requires govright.llServices.llFacebook
+ * @requires govright.platformServices.grFacebook
  *
  * @description
  *
@@ -24,12 +24,11 @@
  * - Login user via Facebook:
  *
  * <pre>
- * // SiteConfig.authUrl comes from json config
- * var authUrl = SiteConfig.authUrl + '/' + $location.host();
+ * var authUrl = 'http://corpus.govright.org/auth/facebook/login/' + $location.host();
  *
- * llAuth.socialLogin(authUrl).then(function() {
- *   // do stuff with llAuth.currentUser
- *   console.log( llAuth.currentUser );
+ * grAuth.socialLogin(authUrl).then(function() {
+ *   // do stuff with grAuth.currentUser
+ *   console.log( grAuth.currentUser );
  * }).catch(function(err) {
  *   // show login error message
  * });
@@ -41,9 +40,9 @@
  * var username = 'test'; // Can be user email
  * var password = 'test';
  *
- * llAuth.login(username, password).then(function() {
- *   // do stuff with llAuth.currentUser
- *   console.log( llAuth.currentUser );
+ * grAuth.login(username, password).then(function() {
+ *   // do stuff with grAuth.currentUser
+ *   console.log( grAuth.currentUser );
  * }).catch(function(err) {
  *   // show login error message
  * });
@@ -53,11 +52,11 @@
  *
  * <pre>
  * $scope.$on('auth:login', function() {
- *   $scope.currentUser = llAuth.currentUser;
+ *   $scope.currentUser = grAuth.currentUser;
  * });
  *
  * $scope.logout = function() {
- *   llAuth.logout().then(function() {
+ *   grAuth.logout().then(function() {
  *     $scope.currentUser = null;
  *     $state.go('site.login'); // or something
  *   });
@@ -69,10 +68,10 @@
  * <pre>
  * angular
  *   .module('app')
- *   .run(['llAuth', function(llAuth) {
- *     llAuth.checkLogin().then(function() {
- *       // do stuff with llAuth.currentUser
- *       console.log( llAuth.currentUser );
+ *   .run(['grAuth', function(grAuth) {
+ *     grAuth.checkLogin().then(function() {
+ *       // do stuff with grAuth.currentUser
+ *       console.log( grAuth.currentUser );
  *     }).catch(function() {
  *       console.warn('Your login expired or something.');
  *     });
@@ -81,8 +80,8 @@
  */
 (function() {
   angular
-    .module('govright.llServices')
-    .factory('llAuth', Auth);
+    .module('govright.platformServices')
+    .factory('grAuth', Auth);
 
   Auth.$inject = [
     '$window',
@@ -90,7 +89,7 @@
     '$rootScope',
     'LoopBackAuth',
     'User',
-    'llFacebook'
+    'grFacebook'
   ];
 
   function Auth($window, $q, $rootScope, LoopBackAuth, User, Facebook) {
@@ -100,11 +99,11 @@
     var loginDeferred;
     var loginPopup;
 
-    var llAuth = {
+    var grAuth = {
       /**
        * @ngdoc property
-       * @name govright.llServices.llAuth#currentUser
-       * @propertyOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#currentUser
+       * @propertyOf govright.platformServices.grAuth
        *
        * @description
        *
@@ -114,8 +113,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#initSocialHandler
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#initSocialHandler
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
@@ -133,7 +132,7 @@
 
           if (!payload || !payload.corpusAccessToken) {
             console.error('LL Auth: invalid payload.');
-            llAuth.clearState();
+            grAuth.clearState();
             if (loginDeferred) {
               loginDeferred.reject('invalid-payload');
             }
@@ -142,7 +141,7 @@
 
           if (!payload.corpusAccessToken.id) {
             console.error('LL Auth: missing access token.');
-            llAuth.clearState();
+            grAuth.clearState();
             if (loginDeferred) {
               loginDeferred.reject('malformed-access-token');
             }
@@ -151,7 +150,7 @@
 
           if (!payload.facebookAccessData || !payload.facebookAccessData.appId) {
             console.error('LL Auth: malformed facebook data.');
-            llAuth.clearState();
+            grAuth.clearState();
             if (loginDeferred) {
               loginDeferred.reject('malformed-facebook-data');
             }
@@ -165,12 +164,12 @@
           Facebook.saveAccessData(payload.facebookAccessData, LoopBackAuth.rememberMe);
           Facebook.init();
 
-          llAuth.setCurrentUser(payload);
+          grAuth.setCurrentUser(payload);
 
           /**
            * @ngdoc event
            * @name auth:login
-           * @eventOf govright.llServices.llAuth
+           * @eventOf govright.platformServices.grAuth
            * @eventType broadcast
            *
            * @description
@@ -190,12 +189,12 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#setCurrentUser
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#setCurrentUser
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
-       * Builds a user object from the auth payload and populates it on `llAuth.currentUser`.
+       * Builds a user object from the auth payload and populates it on `grAuth.currentUser`.
        *
        * @param {Object} data Corpus payload object or `User.login()` result
        *
@@ -204,7 +203,7 @@
       setCurrentUser: function(data) {
         // Check if it's a `User.login()` result
         if(data.ttl && data.user && data.userId) {
-          llAuth.currentUser = {
+          grAuth.currentUser = {
             id: data.userId,
             facebookAccessData: {},
             profile: data.user.profile,
@@ -214,7 +213,7 @@
 
         // Else expect it to be a Corpus payload
         } else {
-          llAuth.currentUser = {
+          grAuth.currentUser = {
             id: data.corpusAccessToken.userId,
             facebookAccessData: data.facebookAccessData,
             profile: data.userProfile,
@@ -222,18 +221,18 @@
             email: data.email
           };
         }
-        return llAuth.currentUser;
+        return grAuth.currentUser;
       },
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#login
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#login
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
        * Login user using LoopBack user credentials.
-       * Current user object becomes available on `llAuth.currentUser` in case of successful login.
+       * Current user object becomes available on `grAuth.currentUser` in case of successful login.
        *
        * `auth:login` event is broadcasted in case of successful login.
        *
@@ -266,24 +265,24 @@
         }
 
         return User.login(credentials, function(data) {
-          llAuth.setCurrentUser(data);
+          grAuth.setCurrentUser(data);
           $rootScope.$broadcast('auth:login');
         }, function(err) {
-          llAuth.clearState();
+          grAuth.clearState();
           console.error('LL Auth: LB user login failed.', err);
         }).$promise;
       },
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#socialLogin
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#socialLogin
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
        * Login user via Facebook. Creates the login popup and starts the login process.
        * Current user object becomes available
-       * on `llAuth.currentUser` in case of successful login.
+       * on `grAuth.currentUser` in case of successful login.
        *
        * `auth:login` event is broadcasted in case of successful login.
        *
@@ -293,7 +292,7 @@
        * of successful login.
        */
       socialLogin: function(authUrl) {
-        llAuth.initSocialHandler();
+        grAuth.initSocialHandler();
 
         if (loginDeferred) {
           console.warn('LL Auth: login() called during pending login...');
@@ -324,8 +323,8 @@
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#checkLogin
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#checkLogin
+       * @methodOf govright.platformServices.grAuth
        * @broadcasts auth:login
        *
        * @description
@@ -334,7 +333,7 @@
        *
        * This is something that is typically called in the `run` block of the app
        * to check if users have been logged in previous sessions and automatically log them in.
-       * Current user data becomes available in `llAuth.currentUser` in case of successful login.
+       * Current user data becomes available in `grAuth.currentUser` in case of successful login.
        *
        * `auth:login` event is broadcasted in case of successful login.
        *
@@ -344,7 +343,7 @@
       checkLogin: function() {
         if(User.isAuthenticated()) {
           return User.getCurrent(function (userData) {
-            llAuth.currentUser = {
+            grAuth.currentUser = {
               id: userData.id,
               profile: userData.profile,
               facebookAccessData: Facebook.loadAccessData(),
@@ -355,11 +354,11 @@
             $rootScope.$broadcast('auth:login');
           }, function (err) {
             console.error('LL Auth: session restore failed.', err);
-            llAuth.clearState();
+            grAuth.clearState();
           }).$promise;
         } else {
           return $q(function(resolve, reject) {
-            llAuth.clearState();
+            grAuth.clearState();
             reject(new Error('Session data is missing or expired.'));
           });
         }
@@ -369,13 +368,13 @@
           LoopBackAuth.clearUser();
           LoopBackAuth.clearStorage();
           Facebook.clearStorage();
-          llAuth.currentUser = null;
+          grAuth.currentUser = null;
       },
 
       /**
        * @ngdoc method
-       * @name govright.llServices.llAuth#logout
-       * @methodOf govright.llServices.llAuth
+       * @name govright.platformServices.grAuth#logout
+       * @methodOf govright.platformServices.grAuth
        *
        * @description
        *
@@ -386,11 +385,11 @@
        */
       logout: function() {
         var clientLogout = function () {
-          llAuth.clearState();
+          grAuth.clearState();
           /**
            * @ngdoc event
            * @name auth:logout
-           * @eventOf govright.llServices.llAuth
+           * @eventOf govright.platformServices.grAuth
            * @eventType broadcast
            *
            * @description
@@ -412,6 +411,6 @@
       }
     };
 
-    return llAuth;
+    return grAuth;
   }
 }());

@@ -2,8 +2,8 @@
 
 /**
  * @ngdoc object
- * @name govright.llServices.llFacebook
- * @header govright.llServices.llFacebook
+ * @name govright.platformServices.grFacebook
+ * @header govright.platformServices.grFacebook
  * @object
  *
  * @requires $q
@@ -19,8 +19,8 @@
  */
 (function() {
   angular
-    .module('govright.llServices')
-    .factory('llFacebook', Facebook);
+    .module('govright.platformServices')
+    .factory('grFacebook', Facebook);
 
   Facebook.$inject = ['$q', '$window'];
 
@@ -44,8 +44,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#init
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#init
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -73,8 +73,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#postAction
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#postAction
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -123,8 +123,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#getAppId
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#getAppId
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -138,8 +138,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#getNamespace
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#getNamespace
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -153,8 +153,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#getAccessToken
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#getAccessToken
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -168,8 +168,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#saveAccessData
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#saveAccessData
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -190,8 +190,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#loadAccessData
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#loadAccessData
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *
@@ -215,8 +215,8 @@
 
     /**
      * @ngdoc method
-     * @name govright.llServices.llFacebook#clearStorage
-     * @methodOf govright.llServices.llFacebook
+     * @name govright.platformServices.grFacebook#clearStorage
+     * @methodOf govright.platformServices.grFacebook
      *
      * @description
      *

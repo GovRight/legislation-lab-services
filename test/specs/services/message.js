@@ -4,9 +4,9 @@
 describe('llMessage service', function() {
   var Message;
 
-  beforeEach(module('govright.llServices'));
+  beforeEach(module('govright.platformServices'));
 
-  beforeEach(inject(function(_llMessage__) {
-    Message = _llMessage__;
+  beforeEach(inject(function(_grMessage__) {
+    Message = _grMessage__;
   }));
 });

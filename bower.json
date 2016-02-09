@@ -2,7 +2,7 @@
   "name": "govright-ll-services",
   "description": "GovRight Legislation Lab services for AngularJS v1",
   "homepage": "https://github.com/GovRight/legislation-lab-services",
-  "main": "./dist/govright-ll-services.js",
+  "main": "dist/govright-platform-services.js",
   "authors": [
     "Victor Miletsky <victor@govright.org>",
     "Heath Morrison <heath@govright.org>"
