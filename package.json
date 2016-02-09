@@ -1,16 +1,16 @@
 {
-  "name": "govright-ll-services",
+  "name": "govright-platform-services",
   "version": "1.0.0",
-  "description": "GovRight Legislation Lab services for AngularJS v1",
+  "description": "Services that encapsulate common techniques of interacting with GovRight Corpus REST API",
   "author": "GovRight <contact@govright.org>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GovRight/legislation-lab-services.git"
+    "url": "git+https://github.com/GovRight/platform-services.git"
   },
   "bugs": {
-    "url": "https://github.com/GovRight/legislation-lab-services/issues"
+    "url": "https://github.com/GovRight/platform-services/issues"
   },
-  "homepage": "https://github.com/GovRight/legislation-lab-services",
+  "homepage": "https://github.com/GovRight/platform-services",
   "license": "MIT",
   "main": "gulpfile.js",
   "contributors": [

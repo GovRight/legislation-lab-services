@@ -1,7 +1,7 @@
 {
-  "name": "govright-ll-services",
-  "description": "GovRight Legislation Lab services for AngularJS v1",
-  "homepage": "https://github.com/GovRight/legislation-lab-services",
+  "name": "govright-platform-services",
+  "description": "Services that encapsulate common techniques of interacting with GovRight Corpus REST API",
+  "homepage": "https://github.com/GovRight/platform-services",
   "main": "dist/govright-platform-services.js",
   "authors": [
     "Victor Miletsky <victor@govright.org>",
