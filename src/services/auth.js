@@ -168,15 +168,22 @@
 
           /**
            * @ngdoc event
-           * @name auth:login
+           * @eventName auth:login
            * @eventOf govright.platformServices.grAuth
            * @eventType broadcast
            *
            * @description
            *
-           * `auth:login` is broadcasted on successful login. Example subscription:
+           * **`auth:login`** is broadcasted on successful login.
            *
-           * `$scope.$on('auth:login', function() {...});`
+           * Example subscription:
+           *
+           * <pre>
+           * $scope.$on('auth:login', function() {
+           *   // do stuff on login
+           *   // like set current user on ctrl scope
+           * });`
+           * </pre>
            */
           $rootScope.$broadcast('auth:login');
 
@@ -388,15 +395,22 @@
           grAuth.clearState();
           /**
            * @ngdoc event
-           * @name auth:logout
+           * @eventName auth:logout
            * @eventOf govright.platformServices.grAuth
            * @eventType broadcast
            *
            * @description
            *
-           * `auth:logout` is broadcasted when logout is done. Example subscription:
+           * **`auth:logout`** is broadcasted when logout is done.
            *
-           * `$scope.$on('auth:logout', function() {...});`
+           * Example subscription:
+           *
+           * <pre>
+           * $scope.$on('auth:logout', function() {
+           *   // do stuff on logout
+           *   // like remove current user data from scope
+           * });
+           * </pre>
            */
           $rootScope.$broadcast('auth:logout');
         };

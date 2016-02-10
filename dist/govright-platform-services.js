@@ -209,15 +209,22 @@
 
           /**
            * @ngdoc event
-           * @name auth:login
+           * @eventName auth:login
            * @eventOf govright.platformServices.grAuth
            * @eventType broadcast
            *
            * @description
            *
-           * `auth:login` is broadcasted on successful login. Example subscription:
+           * **`auth:login`** is broadcasted on successful login.
            *
-           * `$scope.$on('auth:login', function() {...});`
+           * Example subscription:
+           *
+           * <pre>
+           * $scope.$on('auth:login', function() {
+           *   // do stuff on login
+           *   // like set current user on ctrl scope
+           * });`
+           * </pre>
            */
           $rootScope.$broadcast('auth:login');
 
@@ -429,15 +436,22 @@
           grAuth.clearState();
           /**
            * @ngdoc event
-           * @name auth:logout
+           * @eventName auth:logout
            * @eventOf govright.platformServices.grAuth
            * @eventType broadcast
            *
            * @description
            *
-           * `auth:logout` is broadcasted when logout is done. Example subscription:
+           * **`auth:logout`** is broadcasted when logout is done.
            *
-           * `$scope.$on('auth:logout', function() {...});`
+           * Example subscription:
+           *
+           * <pre>
+           * $scope.$on('auth:logout', function() {
+           *   // do stuff on logout
+           *   // like remove current user data from scope
+           * });
+           * </pre>
            */
           $rootScope.$broadcast('auth:logout');
         };
@@ -996,15 +1010,21 @@
       if (oldCode !== locale.code) {
         /**
          * @ngdoc event
-         * @name locale:changed
+         * @eventName locale:changed
          * @eventOf govright.platformServices.grLocale
          * @eventType broadcast
          *
          * @description
          *
-         * `locale:changed` is broadcasted when current locale is changed. Example subscription:
+         * **`locale:changed`** is broadcasted when current locale is changed.
          *
-         * `$scope.$on('locale:changed', function() {...});`
+         * Example subscription:
+         *
+         * <pre>
+         * $scope.$on('locale:changed', function() {
+         *   // do stuff when current locale changes
+         * });
+         * </pre>
          */
         $rootScope.$broadcast('locale:changed', locale);
       }
@@ -1235,15 +1255,21 @@
 
         /**
          * @ngdoc event
-         * @name locale:new-list
+         * @eventName locale:new-list
          * @eventOf govright.platformServices.grLocale
          * @eventType broadcast
          *
          * @description
          *
-         * `locale:new-list` is broadcasted when locale list is changed. Example subscription:
+         * **`locale:new-list`** is broadcasted when locale list is changed.
          *
-         * `$scope.$on('locale:new-list', function() {...});`
+         * Example subscription:
+         *
+         * <pre>
+         * $scope.$on('locale:new-list', function() {
+         *   // do stuff when list's changed
+         * });
+         * </pre>
          */
         $rootScope.$broadcast('locale:new-list');
 

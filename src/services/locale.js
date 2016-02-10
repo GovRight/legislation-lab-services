@@ -66,15 +66,21 @@
       if (oldCode !== locale.code) {
         /**
          * @ngdoc event
-         * @name locale:changed
+         * @eventName locale:changed
          * @eventOf govright.platformServices.grLocale
          * @eventType broadcast
          *
          * @description
          *
-         * `locale:changed` is broadcasted when current locale is changed. Example subscription:
+         * **`locale:changed`** is broadcasted when current locale is changed.
          *
-         * `$scope.$on('locale:changed', function() {...});`
+         * Example subscription:
+         *
+         * <pre>
+         * $scope.$on('locale:changed', function() {
+         *   // do stuff when current locale changes
+         * });
+         * </pre>
          */
         $rootScope.$broadcast('locale:changed', locale);
       }
@@ -305,15 +311,21 @@
 
         /**
          * @ngdoc event
-         * @name locale:new-list
+         * @eventName locale:new-list
          * @eventOf govright.platformServices.grLocale
          * @eventType broadcast
          *
          * @description
          *
-         * `locale:new-list` is broadcasted when locale list is changed. Example subscription:
+         * **`locale:new-list`** is broadcasted when locale list is changed.
          *
-         * `$scope.$on('locale:new-list', function() {...});`
+         * Example subscription:
+         *
+         * <pre>
+         * $scope.$on('locale:new-list', function() {
+         *   // do stuff when list's changed
+         * });
+         * </pre>
          */
         $rootScope.$broadcast('locale:new-list');
 
