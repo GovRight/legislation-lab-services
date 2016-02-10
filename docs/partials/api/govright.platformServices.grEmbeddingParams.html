@@ -6,15 +6,19 @@
 <div><h2 id="description">Description</h2>
 <div class="description"><div class="govright-platformservices-grembeddingparams-page"><p>Is a plain object of embedding parameters which are passed from the outside of the app
 through root element data attributes (<code>data-*</code>).</p>
-<p>Important notes:</p>
+<h3 id="embedded-application-concept" id="description_embedded-application-concept">Embedded application concept</h3>
+<p>Any GovRight AngularJS application can be delivered <strong>either as</strong> a stand-alone SPA under
+it&#39;s own domain <strong>or as</strong> a widget embedded into another site. The <code>grEmbeddingParams</code>
+service and it&#39;s provider are aimed to provide an easy way to detect if the current app is
+embedded. Application is considered to be <strong>not</strong> embedded if it&#39;s root element is <code>html</code>.</p>
+<h3 id="important-notes" id="description_important-notes">Important notes</h3>
 <ul>
 <li>Returned value always has the <code>isEmbeddedMode</code> property which is either true or false
 and indicates if app is in embedded mode now.</li>
 <li>The <code>query</code> (<code>data-query=&quot;&quot;</code>) param is treated in a special way and can be specified either
 as query or as json object and is parsed into a plain object.</li>
 </ul>
-<p><br>
-For example, following embedded app:</p>
+<p>For example, following embedded app:</p>
 <pre class="prettyprint linenums">
 &lt;div ng-app="myApp" data-app-port="9000" data-locale="en" data-query="test=me&lets=go"&gt;&lt;/div&gt;
 </pre>
@@ -25,18 +29,32 @@ angular
   .controller('MyController', ['grEmbeddingParams', function(EmbeddingParams) {
     console.log(EmbeddingParams);
 
-    /* Outputs the following:
+    // Outputs the following:
     {
        isEmbeddedMode: true,
        appPort: '9000',
        locale: 'en',
+       // `query` param is parsed into a plain object
        query: {
          test: 'me',
          lets: 'go'
        }
-     } * /
+     }
 
   }]);
+</pre>
+<p>If application is <strong>not</strong> embedded, i.e. bootstrapped on the <code>html</code> element:</p>
+<pre class="prettyprint linenums">
+&lt;html ng-app="myApp"&gt;
+  &lt;head&gt;...&lt;/head&gt;
+  &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>The <code>grEmbeddingParams</code> value will be:</p>
+<pre class="prettyprint linenums">
+{
+  isEmbeddedMode: false
+}
 </pre>
 </div></div>
 <div class="member property"><h2 id="properties">Properties</h2>

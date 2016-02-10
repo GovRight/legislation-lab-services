@@ -28,7 +28,7 @@ NG_DOCS={
       "type": "object",
       "moduleName": "govright.platformServices",
       "shortDescription": "Is a plain object of embedding parameters which are passed from the outside of the app",
-      "keywords": "angular api app appport attributes console controller data data- data-app-port data-locale data-query element embedded embedding en example false function govright grembeddingparams indicates isembeddedmode json locale log mode module myapp mycontroller ng-app notes object outputs param parameters params parsed passed plain platformservices produce property query returned root special test treated true"
+      "keywords": "aimed angular angularjs api app application appport attributes bootstrapped concept considered console controller current data data- data-app-port data-locale data-query delivered detect domain easy element embedded embedding en example false function govright grembeddingparams html indicates isembeddedmode json locale log mode module myapp mycontroller ng-app notes object outputs param parameters params parsed passed plain platformservices produce property provide provider query returned root service site spa special stand-alone test treated true widget"
     },
     {
       "section": "api",
@@ -36,8 +36,8 @@ NG_DOCS={
       "shortName": "govright.platformServices.grEmbeddingParamsProvider",
       "type": "object",
       "moduleName": "govright.platformServices",
-      "shortDescription": "This provider enables setting a custom app root on the app startup and getting",
-      "keywords": "$rootelement $rootelementprovider access angular api app application appport attributes called config custom data data- data-app-port data-locale data-query defaults dom element embedded embedding embeddingprovider en enables example false function getparams govright grembeddingparamsprovider indicates isembeddedmode json locale method mode module myapp ng-app notes object param parameters params parsed passed plain platformservices produce property provider query returned returns root rootelement set setapproot setting special stage startup test treated true"
+      "shortDescription": "Enables setting a custom app root on the app startup and detecting whether app is in",
+      "keywords": "$get $rootelement $rootelementprovider aimed angular angularjs api app application appport attributes called concept config considered current custom data data- data-app-port data-locale data-query defaults delivered detect detecting dom domain easy element embedded embedding embeddingprovider en enables example false function getparams govright grembeddingparams grembeddingparamsprovider html indicates isembeddedmode json locale method mode module myapp ng-app notes object otherparam param parameters params parsed passed plain platformservices populated produce property provide provider query returned returns root rootelement service set setapproot setting site spa special stage stand-alone startup test treated true widget"
     },
     {
       "section": "api",
