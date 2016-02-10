@@ -37,7 +37,7 @@ NG_DOCS={
       "type": "object",
       "moduleName": "govright.platformServices",
       "shortDescription": "Enables setting a custom app root on the app startup and detecting whether app is in",
-      "keywords": "$get $rootelement $rootelementprovider aimed angular angularjs api app application appport attributes called concept config considered current custom data data- data-app-port data-locale data-query defaults delivered detect detecting dom domain easy element embedded embedding embeddingprovider en enables example false function getparams govright grembeddingparams grembeddingparamsprovider html indicates isembeddedmode json locale method mode module myapp ng-app notes object otherparam param parameters params parsed passed plain platformservices populated produce property provide provider query returned returns root rootelement service set setapproot setting site spa special stage stand-alone startup test treated true widget"
+      "keywords": "$get $rootelement $rootelementprovider aimed angular angularjs api app application appport attributes block called concept config considered current custom data data- data-app-port data-locale data-query defaults delivered detect detecting dom domain easy element embedded embedding embeddingprovider en enables example false function getparams govright grembeddingparams grembeddingparamsprovider html indicates isembeddedmode json locale method mode module myapp ng-app notes object otherdataparam param parameters params parsed passed plain platformservices populated produce property provide provider query returned returns root rootelement service set setapproot setting site spa special specific stage stand-alone startup test things treated true usage widget"
     },
     {
       "section": "api",

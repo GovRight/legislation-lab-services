@@ -16,12 +16,8 @@ embedded. Application is considered to be <strong>not</strong> embedded if it&#3
 {
     isEmbeddedMode: true, // This property is always present
     // Others are populated from the root element data attributes
-    otherParam: '9000',
-    locale: 'en',
-    query: {
-       test: 'me',
-       lets: 'go'
-    }
+    otherDataParam: 'value',
+    ...
   }
 </pre>
 </div></div>
@@ -57,6 +53,19 @@ For example, following embedded app:</p>
     lets: 'go'
   }
 }
+</pre>
+<p>Example of usage in app config block:
+<pre class="prettyprint linenums">
+angular
+  .module('myApp')
+  .config(['$rootElementProvider', 'grEmbeddingParamsProvider',
+    function($rootElementProvider, EmbeddingProvider) {
+
+      if(EmbeddingProvider.getParams().isEmbeddedMode) {
+        // do things specific for embedded mode
+      }
+
+  });
 </pre>
 </div><h5 id="methods_getparams_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grembeddingparamsprovider-getparams-page"><p>Plain object of application embedding parameters.</p>
 </div></td></tr></table></div>
