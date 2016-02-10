@@ -9,8 +9,28 @@
  *
  * @description
  *
- * This provider enables setting a custom app root on the app startup and getting
- * access to embedding params passed from the outside of the app.
+ * Enables setting a custom app root on the app startup and detecting whether app is in
+ * embedded mode on the config stage.
+ *
+ * # Embedded application concept
+ * Any GovRight AngularJS application can be delivered **either as** a stand-alone SPA under
+ * it's own domain **or as** a widget embedded into another site. The `grEmbeddingParams`
+ * service and it's provider are aimed to provide an easy way to detect if the current app is
+ * embedded. Application is considered to be **not** embedded if it's root element is `html`.
+ *
+ * Example value of embedding params:
+ * <pre>
+ * {
+    isEmbeddedMode: true, // This property is always present
+    // Others are populated from the root element data attributes
+    otherParam: '9000',
+    locale: 'en',
+    query: {
+       test: 'me',
+       lets: 'go'
+    }
+  }
+ * </pre>
  */
 
 /**
@@ -22,14 +42,19 @@
  * Is a plain object of embedding parameters which are passed from the outside of the app
  * through root element data attributes (`data-*`).
  *
- * Important notes:
+ * # Embedded application concept
+ * Any GovRight AngularJS application can be delivered **either as** a stand-alone SPA under
+ * it's own domain **or as** a widget embedded into another site. The `grEmbeddingParams`
+ * service and it's provider are aimed to provide an easy way to detect if the current app is
+ * embedded. Application is considered to be **not** embedded if it's root element is `html`.
+ *
+ * # Important notes
  *
  * * Returned value always has the `isEmbeddedMode` property which is either true or false
  * and indicates if app is in embedded mode now.
  * * The `query` (`data-query=""`) param is treated in a special way and can be specified either
  * as query or as json object and is parsed into a plain object.
  *
- * <br>
  * For example, following embedded app:
  *
  * <pre>
@@ -44,18 +69,36 @@
  *   .controller('MyController', ['grEmbeddingParams', function(EmbeddingParams) {
  *     console.log(EmbeddingParams);
  *
- *     /* Outputs the following:
+ *     // Outputs the following:
  *     {
  *        isEmbeddedMode: true,
  *        appPort: '9000',
  *        locale: 'en',
+ *        // `query` param is parsed into a plain object
  *        query: {
  *          test: 'me',
  *          lets: 'go'
  *        }
- *      } * /
+ *      }
  *
  *   }]);
+ * </pre>
+ *
+ * If application is **not** embedded, i.e. bootstrapped on the `html` element:
+ *
+ * <pre>
+ * <html ng-app="myApp">
+ *   <head>...</head>
+ *   <body>...</body>
+ * </html>
+ * </pre>
+ *
+ * The `grEmbeddingParams` value will be:
+ *
+ * <pre>
+ * {
+ *   isEmbeddedMode: false
+ * }
  * </pre>
  */
 
@@ -113,10 +156,12 @@
        *
        * @description
        *
+       * Same as provider's **`$get()`**.
+       *
        * Returns application embedding parameters which are passed from the outside of the app
        * through root element data attributes (`data-*`).
        *
-       * Important notes:
+       * **Important notes:**
        *
        * * Returned value always has the `isEmbeddedMode` property which is either true or false
        * and indicates if app is in embedded mode now.
@@ -143,7 +188,6 @@
        *   }
        * }
        * </pre>
-       *
        *
        * @returns {Object} Plain object of application embedding parameters.
        */
