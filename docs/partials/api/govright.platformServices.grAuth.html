@@ -140,19 +140,31 @@ of successful login.</p>
 </ul>
 </div>
 <div class="member event"><h2 id="events">Events</h2>
-<ul class="events"><li><h3 id="events_login">login</h3>
-<div class="login"><div class="auth-page auth-login-page"><p><code>auth:login</code> is broadcasted on successful login. Example subscription:</p>
-<p><code>$scope.$on(&#39;auth:login&#39;, function() {...});</code></p>
-</div><div class="inline"><h4 id="events_login_type">Type:</h4>
+<ul class="events"><li><h3></h3>
+<div class=""><div class="docs-page"><p><strong><code>auth:login</code></strong> is broadcasted on successful login.</p>
+<p>Example subscription:</p>
+<pre class="prettyprint linenums">
+$scope.$on('auth:login', function() {
+  // do stuff on login
+  // like set current user on ctrl scope
+});`
+</pre>
+</div><div class="inline"><h4 id="events_type">Type:</h4>
 <div class="type">broadcast</div>
 </div>
 <div class="inline"></div>
 </div>
 </li>
-<li><h3 id="events_logout">logout</h3>
-<div class="logout"><div class="auth-page auth-logout-page"><p><code>auth:logout</code> is broadcasted when logout is done. Example subscription:</p>
-<p><code>$scope.$on(&#39;auth:logout&#39;, function() {...});</code></p>
-</div><div class="inline"><h4 id="events_logout_type">Type:</h4>
+<li><h3></h3>
+<div class=""><div class="docs-page"><p><strong><code>auth:logout</code></strong> is broadcasted when logout is done.</p>
+<p>Example subscription:</p>
+<pre class="prettyprint linenums">
+$scope.$on('auth:logout', function() {
+  // do stuff on logout
+  // like remove current user data from scope
+});
+</pre>
+</div><div class="inline"><h4 id="events_type">Type:</h4>
 <div class="type">broadcast</div>
 </div>
 <div class="inline"></div>
