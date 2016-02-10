@@ -480,12 +480,8 @@
  * {
     isEmbeddedMode: true, // This property is always present
     // Others are populated from the root element data attributes
-    otherParam: '9000',
-    locale: 'en',
-    query: {
-       test: 'me',
-       lets: 'go'
-    }
+    otherDataParam: 'value',
+    ...
   }
  * </pre>
  */
@@ -644,6 +640,20 @@
        *     lets: 'go'
        *   }
        * }
+       * </pre>
+       *
+       * Example of usage in app config block:
+       * <pre>
+       * angular
+       *   .module('myApp')
+       *   .config(['$rootElementProvider', 'grEmbeddingParamsProvider',
+       *     function($rootElementProvider, EmbeddingProvider) {
+       *
+       *       if(EmbeddingProvider.getParams().isEmbeddedMode) {
+       *         // do things specific for embedded mode
+       *       }
+       *
+       *   });
        * </pre>
        *
        * @returns {Object} Plain object of application embedding parameters.
