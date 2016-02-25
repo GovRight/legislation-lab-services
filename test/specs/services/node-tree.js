@@ -2,7 +2,7 @@
 'use strict';
 
 describe('grNodeTree', function() {
-  var tree, doc = JSON.parse(JSON.stringify(window.__fixtures__.lawPackage));
+  var tree, doc = JSON.parse(JSON.stringify(window.__fixtures__.discussionPackage));
 
   beforeEach(module('govright.platformServices'));
 
@@ -14,7 +14,7 @@ describe('grNodeTree', function() {
     });
 
     it('should keep node tree structure', function() {
-      expect(doc.nodes.length).to.equal(window.__fixtures__.lawPackage.nodes.length);
+      expect(doc.nodes.length).to.equal(window.__fixtures__.discussionPackage.nodes.length);
     });
 
     it('should decorate nodes with href', function() {
