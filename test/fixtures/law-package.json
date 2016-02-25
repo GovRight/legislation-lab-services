@@ -1,0 +1,1397 @@
+{
+  "slug": "default",
+  "lawSlug": "morocco-petition",
+  "domain": "",
+  "locales": {
+    "en": {
+      "title": "Legal Basis for the Right of Petition",
+      "tagline": "Parliament is deciding the rights citizens have to government data and what data it may collect. What do citizens want?",
+      "overview": "According to Chapter XV of the Constitution of Morocco, citizens possess the right to present petitions to public authorities. This draft law addresses the organizational conditions and terms of exercise of this right.",
+      "country": "Morocco"
+    },
+    "fr": {
+      "title": "Fondement juridique dépendant du droit de pétition",
+      "overview": "Le projet de cette loi provient sur la base des exigences réglementaires du chapitre XV de la Constitution qui stipule que les citoyens ont le droit de présenter des pétitions aux autorités publiques. La loi définit les conditions d'organisation et les clauses de l'exercice de ce droit.",
+      "country": "Maroc"
+    },
+    "ar": {
+      "title": "الأرضية القانونية المتعلقة بالحق في تقديم العرائض",
+      "overview": "يقدم  الدستور المغربي الجديد ل2011 شكلا من أشكال الديمقراطية التشاركية، من بينها الحق في تقديم عرائض إلى السلطات العمومية، سواء على المستوى الوطني أو الإقليمي.و لقد تم رسميا إضفاء الطابع المؤسسي على الحق في تقديم عرائض بموجب المادة 15 من الدستور، التي تنص على أن للمواطنين والمواطنات الحق في تقديم عرائض إلى  السلطات العمومية.ويطلق على القانون  التنظيمي المكلف بالحق في تقديم  العرائض بالنواة الصلبة للقوانين التنظيمية . وسيتم التعامل مع هذا القانون لأول مرة في التجربة الدستورية المغربية, الذي سيمكن المواطنين المغاربة التشريع من خلال العرائض الخاصة بهم",
+      "country": "المغرب"
+    }
+  },
+  "defaultLocale": "en",
+  "timeline": [
+    {
+      "date": "2015-02-23",
+      "locales": {
+        "en": {
+          "text": "Something's gonna happen"
+        }
+      }
+    },
+    {
+      "date": "2015-01-24",
+      "locales": {
+        "en": {
+          "text": "Something's gonna happen too"
+        }
+      }
+    },
+    {
+      "date": "2014-10-24",
+      "locales": {
+        "en": {
+          "text": "THE END!"
+        }
+      }
+    }
+  ],
+  "cover": "http://legislationlab.org/images/morocco-splash.jpg",
+  "logo": "",
+  "facilitatorWebsite": "",
+  "draftLawNumber": "",
+  "officialDate": "",
+  "isDefault": true,
+  "isPublic": true,
+  "id": "5583016875e1ad197326ef0a",
+  "parentDiscussionId": "",
+  "law": {
+    "slug": "morocco-petition",
+    "locales": {
+      "en": {
+        "title": "Legal Basis for the Right of Petition"
+      },
+      "fr": {
+        "title": "Fondement juridique dépendant du droit de pétition"
+      },
+      "ar": {
+        "title": "الأرضية القانونية المتعلقة بالحق في تقديم العرائض",
+        "direction": "rtl"
+      }
+    },
+    "defaultLocale": "en",
+    "cover": "",
+    "id": "54fcb953aa1761110e955a3f"
+  },
+  "stats": {
+    "nodes": 32,
+    "versions": 35,
+    "comments": 28,
+    "votes": 177,
+    "votesUp": 113,
+    "votesDown": 64,
+    "contributors": {
+      "total": 14,
+      "gender": {
+        "male": 11,
+        "female": 3,
+        "unknown": 0
+      },
+      "age": {
+        "<18": 0,
+        "18-25": 4,
+        "25-45": 7,
+        "45+": 2,
+        "unknown": 1
+      },
+      "country": {
+        "unknown": 5,
+        "Morocco": 5,
+        "Ukraine": 3,
+        "Ohio": 1
+      }
+    }
+  },
+  "moderators": [],
+  "nodes": [
+    {
+      "slug": "preamble",
+      "abstract": false,
+      "id": "54fcb953aa1761110e955a44",
+      "stats": {
+        "versions": 2,
+        "comments": 5,
+        "votes": 13,
+        "votesUp": 10,
+        "votesDown": 3
+      },
+      "nodes": [],
+      "original": {
+        "isOriginal": true,
+        "locales": {
+          "en": {
+            "title": "PREAMBLE",
+            "text": "Based on the requirements of Section 15 of the Constitution which states that «citizens have the right to present petitions to public authorities. Regulatory law defines the organizational conditions and terms of the exercise of this right»,\n\nThis regulatory bill comes as follows:",
+            "dir": "ltr"
+          },
+          "fr": {
+            "title": "PREAMBLE",
+            "text": "Sur la base des exigences du chapitre 15 de la Constitution qui stipule que «les citoyens ont le droit de présenter des pétitions aux autorités publiques.  Un droit réglementaire définit les conditions d'organisation et les clauses de l'exercice de ce droit », \n Ce projet de loi de réglementation vient comme suit:",
+            "dir": "ltr"
+          },
+          "ar": {
+            "title": "ديباجة",
+            "text": "بناء على مقتضيات الفصل الخامس عشر من الدستور الذي ينص على أن للمواطنات والمواطنين الحق في تقديم عرائض إلى السلطات العموﻣية. ويحدد قانون  :\n\n،تنظيمي شروط وكيفيات ﻣمارسة ھذا الحق يأتي مشروع هذا القانون التنظيمي كالآتي",
+            "dir": "rtl"
+          }
+        },
+        "id": "54fcb954aa1761110e955a4c",
+        "nodeId": "54fcb953aa1761110e955a44",
+        "status": "new",
+        "stats": {
+          "comments": 5,
+          "votes": 12,
+          "votesUp": 9,
+          "votesDown": 3
+        }
+      }
+    },
+    {
+      "slug": "section-2",
+      "abstract": true,
+      "id": "54fcb953aa1761110e955a40",
+      "stats": {
+        "nodes": 1,
+        "versions": 2,
+        "comments": 1,
+        "votes": 11,
+        "votesUp": 7,
+        "votesDown": 4
+      },
+      "nodes": [
+        {
+          "slug": "article-1",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a4e",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 11,
+            "votesUp": 7,
+            "votesDown": 4
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "This law is intended to organizational words: \n\n1. Petition: a suggestion or complaint or notice in writing made by a citizen or group of citizens residing on or outside the national territory, individually or collectively, to the public authorities in order to get an answer or a solution or a public intervention on the subject of the petition. Can petition for collective solutions that include proposals related to the subject of the petition.\n2. Petitioner: every citizen or group of citizens residing within or outside Morocco applying a petition to the public authorities and requires them reach the legal age of majority.\n3. Compatible: every citizen or an alien lawfully resident above the Moroccan soil supports a broad cross-signed, and is subject to reaching the age of legal majority.\n4. Public authorities: each person in his moral character sheet board, central or local, administrative or elected, is responsible for certain development or implementation or activates or evaluates public policy.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Cette loi est destinée à l'organisation des mots:\n1. Pétition: Une suggestion ou une plainte ou un avis écrit d'un citoyen ou groupe de citoyens résidant sur ou en dehors du territoire national, individuellement ou collectivement, pour les pouvoirs publics afin d'obtenir une réponse ou une solution ou d'une intervention publique sur le sujet de la pétition. Peut demander des solutions collectives comprenant des propositions relatives à l'objet de la pétition.\n2. Pétitionnaire: tout citoyen ou groupe de citoyens résidant à l'intérieur ou en dehors du Maroc l'application d'une pétition aux autorités publiques et les oblige atteignent l'âge légal de la majorité.\n3. Compatible: Chaque citoyen ou un étranger résidant régulièrement au-dessus du sol marocain prend en charge un large éventail signé, et est soumise à l'âge de la majorité légale.\n4. Les pouvoirs publics: chaque personne dans son moral bord de feuille de personnage, central ou local, administrative ou élu, est responsable de certain développement ou la mise en œuvre ou activation ou évaluation d’une politique publique.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": ":يراد في هذا القانون التنظيمي بعبارة\n\n1. العريضة : اقتراح أو تظلم أو ملاحظة يتقدم بها بشكل مكتوب مواطن أو مجموعة من المواطنين المقيمين فوق أو خارج التراب الوطني، بشكل فردي أو جماعي، إلى السلطات العمومية بهدف الحصول على جواب أو حل أو تدخل عمومي بشأن موضوع العريضة.  يمكن للعريضة الجماعية أن تتضمن مقترحات حلول لها علاقة بموضوع العريضة.\n2. مُقَدِّم العريضة : كل مواطن أو مجموعة من المواطنين المقيمين داخل أو خارج المغرب يتقدمون بعريضة الى السلطات العمومية و يشترط فيهم بلوغ سن الرشد القانوني.\n3. المُدَعِّم: كل مواطن أو شخص أجنبي مقيم بصفة شرعية فوق التراب المغربي يدعم عريضة عبر توقيعه، ويشترط فيه بلوغ سن الرشد القانوني.\n4. لسلطات العمومية: كل شخص معنوي عام له صفة هيأة عمومية، مركزية أو محلية، إدارية أو منتخبة، تتولى مسؤولية معينة في إعداد أو تنفيذ أو تفعيل أو تقييم سياسة عمومية.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a63",
+            "nodeId": "54fcb954aa1761110e955a4e",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 11,
+              "votesUp": 7,
+              "votesDown": 4
+            }
+          }
+        }
+      ],
+      "original": {
+        "isOriginal": true,
+        "locales": {
+          "en": {
+            "title": "DEFINITIONS",
+            "dir": "ltr"
+          },
+          "fr": {
+            "title": "DEFINITIONS",
+            "dir": "ltr"
+          },
+          "ar": {
+            "title": "تعريفات",
+            "dir": "rtl"
+          }
+        },
+        "id": "54fcb954aa1761110e955a48",
+        "nodeId": "54fcb953aa1761110e955a40",
+        "status": "new",
+        "stats": {}
+      }
+    },
+    {
+      "slug": "section-3",
+      "abstract": true,
+      "id": "54fcb953aa1761110e955a42",
+      "stats": {
+        "nodes": 4,
+        "versions": 5,
+        "comments": 5,
+        "votes": 31,
+        "votesUp": 19,
+        "votesDown": 12
+      },
+      "nodes": [
+        {
+          "slug": "article-1",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a5c",
+          "stats": {
+            "versions": 1,
+            "comments": 2,
+            "votes": 7,
+            "votesUp": 4,
+            "votesDown": 3
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Subject of the petition includes various interventions by public authorities, which have an impact directly or indirectly on the rights and interests of citizens and citizens.\n\nThe subject matter of the petition search public authorities to take actions or decisions or modified or undone or canceled.\n\nThis could include the subject of the petition request for information or clarification on a particular subject.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Objet de la pétition comprend diverses interventions des pouvoirs publics, qui ont une incidence directe ou indirecte sur les droits et les intérêts des citoyens et des citoyens.\n\nL'objet de la recherche de pétition aux autorités publiques de prendre des mesures ou des décisions ou modifiée ou annulée ou annulée.\n\nCela pourrait inclure l'objet de la demande de pétition pour obtenir des informations ou des précisions sur un sujet particulier.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يشمل موضوع العريضة مختلف تدخلات السلطات العمومية التي يكون لها تأثير مباشر أو غير مباشر على حقوق و مصالح المواطنات و المواطنين.\n\nيتعلق موضوع العريضة بحث السلطات العمومية على اتخاذ إجراءات أو قرارات أو تعديلها أو التراجع عنها أو إلغائها.\n\nيمكن أن يتضمن موضوع العريضة طلب الحصول على معلومات أو توضيحات بشأن موضوع معين.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a74",
+            "nodeId": "54fcb954aa1761110e955a5c",
+            "status": "new",
+            "stats": {
+              "comments": 2,
+              "votes": 7,
+              "votesUp": 4,
+              "votesDown": 3
+            }
+          }
+        },
+        {
+          "slug": "article-2",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a5a",
+          "stats": {
+            "versions": 1,
+            "comments": 2,
+            "votes": 8,
+            "votesUp": 4,
+            "votesDown": 4
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Does not include the subject of the petition the following areas:\n\n1. The provisions relating to the Islamic religion and the monarchy of the state and the territorial integrity of the Kingdom;\n2. Acts of sovereignty;\n3. Acts of the judiciary;\n4. The decisions and actions of the tax stamp;\n5. Pardon and amnesty.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "L’objet de la pétition ne comprend pas les zones suivantes:\n\n1. Les dispositions relatives à la religion islamique et la monarchie de l'Etat et l'intégrité territoriale du Royaume;\n2. Actes de la souveraineté;\n3. Actes de la magistrature;\n4. Les décisions et les actions de la vignette fiscale;\n5. Grâce et d'amnistie.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "لا يشمل موضوع العريضة المجالات التالية: \n\n1. الأحكام المتعلقة بالدين الإسلامي والنظام الملكي للدولة والوحدة الترابية للمملكة؛\n2. أعمال السيادة؛\n3. أعمال السلطة القضائية؛\n4. القرارات والإجراءات ذات الطابع الضريبي؛\n5. العفو والعفو العام.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a70",
+            "nodeId": "54fcb954aa1761110e955a5a",
+            "status": "new",
+            "stats": {
+              "comments": 2,
+              "votes": 8,
+              "votesUp": 4,
+              "votesDown": 4
+            }
+          }
+        },
+        {
+          "slug": "article-3",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a5e",
+          "stats": {
+            "versions": 1,
+            "votes": 8,
+            "votesUp": 6,
+            "votesDown": 2
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "The presentation of the petition could not entail prejudice to: \n1. Attachment to the principle of continuity of the public;\n2. Principle of equality of citizens before the public facilities;\n3. Public security or the security of the state of internal or external;\n4. Rights of individuals, groups or the private lives of individuals.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "La présentation de la pétition ne pouvaient entraîner un préjudice à:\n\n1. L'attachement au principe de la continuité du public;\n2. Principe de l'égalité des citoyens devant les services publics;\n3. Sécurité publique ou la sûreté de l'Etat d'interne ou externe;\n4. Droits des individus, des groupes ou la vie privée des individus.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "1. لا يمكن أن يترتب عن تقديم العريضة الإخلال:\n2. بمبدأ استمرارية المرفق العمومي؛\n3. بمبدأ المساواة بين المواطنين أمام المرافق العمومية؛\n4. بالأمن العام أو أمن الدولة الداخلي أو الخارجي\n5. بحقوق الأفراد أو الجماعات أو الحياة الخاصة للأفراد.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a75",
+            "nodeId": "54fcb954aa1761110e955a5e",
+            "status": "new",
+            "stats": {
+              "votes": 8,
+              "votesUp": 6,
+              "votesDown": 2
+            }
+          }
+        },
+        {
+          "slug": "article-4",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a5d",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 8,
+            "votesUp": 5,
+            "votesDown": 3
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "In order to accept the petition:\n1. Not include the national constants or violates the provisions of the Constitution or laws of the Kingdom or conventions and treaties ratified by the State; \n2. Enter the subject within the jurisdiction of the recipient public authority; \n3. Not respect the theme of the issue or subject underwent a view of the judiciary;\n4. Regard to the subject matter not request a public intervention can be achieved through normal legal rulers.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Pour accepter la pétition:\n\n1. Ne pas inclure les constantes nationales ou viole les dispositions de la Constitution ou des lois du Royaume ou conventions et traités ratifiés par l'État;\n2. Saisissez l'objet de la compétence de l'autorité publique bénéficiaire;\n3. Non respecter le thème de la question ou le sujet a subi une vue de l'appareil judiciaire;\n4. L'égard du sujet ne doit pas demander une intervention publique peut être atteint par les dirigeants juridiques normales.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يشترط لقبول العريضة:\n\n1. ألا تتضمن ما يخالف الثوابت الوطنية أو أحكام الدستور أو قوانين المملكة أو المواثيق والمعاهدات التي صادقت عليها الدولة؛\n2. أن يدخل موضوعها ضمن اختصاص السلطة العمومية المتلقية؛\n3. ألا يتعلق موضوعها بقضية تخضع أو خضعت لنظر القضاء؛\n4. ألا يتعلق موضوعها بطلب تدخل عمومي يمكن تحقيقه من خلال المساطر القانونية العادية.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a76",
+            "nodeId": "54fcb954aa1761110e955a5d",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 8,
+              "votesUp": 5,
+              "votesDown": 3
+            }
+          }
+        }
+      ],
+      "original": {
+        "isOriginal": true,
+        "locales": {
+          "en": {
+            "title": "SUBJECT OF THE PETITION AND THE CONDITIONS OF ACCEPTANCE",
+            "dir": "ltr"
+          },
+          "fr": {
+            "title": "OBJET DE LA PETITION ET LES CONDITIONS D'ACCEPTATION",
+            "dir": "ltr"
+          },
+          "ar": {
+            "title": "موضوع العريضة و شروط قبولها",
+            "dir": "rtl"
+          }
+        },
+        "id": "54fcb954aa1761110e955a4a",
+        "nodeId": "54fcb953aa1761110e955a42",
+        "status": "new",
+        "stats": {}
+      }
+    },
+    {
+      "slug": "section-4",
+      "abstract": true,
+      "id": "54fcb953aa1761110e955a43",
+      "stats": {
+        "nodes": 4,
+        "versions": 5,
+        "comments": 3,
+        "votes": 28,
+        "votesUp": 22,
+        "votesDown": 6
+      },
+      "nodes": [
+        {
+          "slug": "article-1",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a58",
+          "stats": {
+            "versions": 1,
+            "votes": 7,
+            "votesUp": 5,
+            "votesDown": 2
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Do not be a petitioner under this law, the subject of regulatory harassment is exposed on the occasion of presentation of the petition.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Ne soyez pas un requérant en vertu de cette loi, l'objet de harcèlement de la réglementation est exposé à l'occasion de la présentation de la pétition.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "لا يكون مقدم العريضة بمقتضى هذا القانون التنظيمي موضوع مضايقات يتعرض لها بمناسبة تقديم العريضة.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a71",
+            "nodeId": "54fcb954aa1761110e955a58",
+            "status": "new",
+            "stats": {
+              "votes": 7,
+              "votesUp": 5,
+              "votesDown": 2
+            }
+          }
+        },
+        {
+          "slug": "article-2",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a55",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 7,
+            "votesUp": 5,
+            "votesDown": 2
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Operates the public authority to provide information about the progress of processing the petitions received by the various means available.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Fonctionne à l'autorité publique de fournir des informations sur l'état d'avancement du traitement des pétitions reçues par les divers moyens disponibles.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "تعمل السلطة العمومية على توفير المعلومات حول مراحل تقدم معالجة العرائض التي تتلقاها بمختلف الوسائل المتاحة.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a6d",
+            "nodeId": "54fcb954aa1761110e955a55",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 7,
+              "votesUp": 5,
+              "votesDown": 2
+            }
+          }
+        },
+        {
+          "slug": "article-3",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a59",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 7,
+            "votesUp": 6,
+            "votesDown": 1
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Do not be content petition or mislead the subject of a defamation or libel or indictment. The victim of the content of the petition to resort to the administrative or judicial authorities.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Ne pas être pétition contenu ou induire en erreur l'objet d'une diffamation ou de libelle ou acte d'accusation.\n\nLa victime de la teneur de la pétition de recourir aux autorités administratives ou judiciaires.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "لا يكون مضمون العريضة موضوع تشهير أو تضليل أو قذف أو اتهام. \n\nللمتضرر من مضمون عريضة اللجوء إلى الجهة الإدارية أو القضائية المختصة.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a72",
+            "nodeId": "54fcb954aa1761110e955a59",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 7,
+              "votesUp": 6,
+              "votesDown": 1
+            }
+          }
+        },
+        {
+          "slug": "article-4",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a5b",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 7,
+            "votesUp": 6,
+            "votesDown": 1
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Excluded from the right to present petitions arms bearers and staff belonging to the departments or public bodies to prevent their own laws to exercise the right to organize.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Exclus du droit de présenter des pétitions porteurs et le personnel bras appartenant à des ministères ou organismes publics pour empêcher leurs propres lois pour exercer le droit de se syndiquer.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يستثنى من الحق في تقديم العرائض حاملو السلاح و الموظفون المنتمون إلى إدارات أو هيئات عمومية تمنع قوانينها الخاصة ممارسة الحق النقابي.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a73",
+            "nodeId": "54fcb954aa1761110e955a5b",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 7,
+              "votesUp": 6,
+              "votesDown": 1
+            }
+          }
+        }
+      ],
+      "original": {
+        "isOriginal": true,
+        "locales": {
+          "en": {
+            "title": "THE RIGHTS AND DUTIES OF THE PETITIONERS",
+            "dir": "ltr"
+          },
+          "fr": {
+            "title": "LES DROITS ET LES DEVOIRS DES PETITIONNAIRES",
+            "dir": "ltr"
+          },
+          "ar": {
+            "title": "حقوق وواجبات مقدمي العريضة",
+            "dir": "rtl"
+          }
+        },
+        "id": "54fcb954aa1761110e955a4b",
+        "nodeId": "54fcb953aa1761110e955a43",
+        "status": "new",
+        "stats": {}
+      }
+    },
+    {
+      "slug": "section-5",
+      "abstract": true,
+      "id": "54fcb953aa1761110e955a41",
+      "stats": {
+        "nodes": 6,
+        "versions": 8,
+        "comments": 9,
+        "votes": 41,
+        "votesUp": 19,
+        "votesDown": 22
+      },
+      "nodes": [
+        {
+          "slug": "article-1",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a51",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 7,
+            "votesUp": 3,
+            "votesDown": 4
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Presentation of the petition in the form of a written document containing clearly and accurate a basic data identifiable of his petitioner, as well as the reasons and objectives of the submission.\n\nThe petition is attached by the arguments supporting documents if it’s available. The petitioner works to clarify the endeavors which had been carried out with the public authorities in order to address his complaint or observation or suggestion.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Présentation de la pétition sous la forme d'un document écrit contient clairement et précisément les tarifs de base de données propre à son représentatif, ainsi que les raisons et les objectifs de la soumission.\n\nLes arguments justificatifs sont attachés à la pétition s’ils sont disponibles.\n\nLes travaux de la pétitionnaire est de préciser les efforts qui avaient été menées avec   les autorités publiques afin de répondre à sa plainte ou observation ou suggestion.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "تقدم العريضة في شكل وثيقة مكتوبة تتضمن بشكل واضح و دقيق البيانات التعريفية الأساسية الخاصة بمقدمها، وكذا بيان الأسباب و الأهداف المتوخاة من تقديمها.\n\nترفق العريضة بالحجج والوثائق المدعمة لها إذا كانت متوفرة. ويعمل مقدم العريضة على توضيح المساعي التي كان قد قام بها لدى السلطات العمومية قصد معالجة تظلمه أو ملاحظته أو اقتراحه.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a6a",
+            "nodeId": "54fcb954aa1761110e955a51",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 7,
+              "votesUp": 3,
+              "votesDown": 4
+            }
+          }
+        },
+        {
+          "slug": "article-2",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a52",
+          "stats": {
+            "versions": 2,
+            "comments": 2,
+            "votes": 8,
+            "votesUp": 4,
+            "votesDown": 4
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Submit the petition in Arabic or Berber, or both.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Envoyer la pétition en arabe ou en berbère, ou les deux.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "تقدم العريضة باللغة العربية أو باللغة الأمازيغية أو بهما معا.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a6b",
+            "nodeId": "54fcb954aa1761110e955a52",
+            "status": "new",
+            "stats": {
+              "comments": 2,
+              "votes": 8,
+              "votesUp": 4,
+              "votesDown": 4
+            }
+          }
+        },
+        {
+          "slug": "article-3",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a53",
+          "stats": {
+            "versions": 1,
+            "comments": 2,
+            "votes": 7,
+            "votesUp": 2,
+            "votesDown": 5
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Appended to the petition following the signature of the petitioner and take into account the correct signature from the presence of the competent administrative authority.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Annexée à la pétition la signature du pétitionnaire et avant tout tenir compte de la signature correcte de la présence de l'autorité administrative compétente.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "تذيل العريضة وجوبا بتوقيع مقدمها ويراعى في ذلك تصحيح الإمضاء من لدن السلطة الإدارية المختصة.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a69",
+            "nodeId": "54fcb954aa1761110e955a53",
+            "status": "new",
+            "stats": {
+              "comments": 2,
+              "votes": 7,
+              "votesUp": 2,
+              "votesDown": 5
+            }
+          }
+        },
+        {
+          "slug": "article-4",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a54",
+          "stats": {
+            "versions": 1,
+            "comments": 2,
+            "votes": 7,
+            "votesUp": 1,
+            "votesDown": 6
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "The petition must be accompanied by a list of the signing of a number of supported members, among foreign citizens or persons legally residing over the Moroccan territory, at least 25,000 signing belong to third parties at least. And take into account the correct procedure signature from the presence of the competent administrative authority.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "La pétition doit être accompagnée d'une liste de la signature d'un certain nombre de membres supportés, parmi les citoyens étrangers ou des personnes résidant légalement sur le territoire marocain, au moins 25 000 signatures appartiennent à des tiers au moins. Et tenir compte de la signature de la procédure correcte de la présence de l'autorité administrative compétente.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يجب ان ترفق العريضة بلائحة تضم توقيع عدد من المدعمين، من بين المواطنين أو الأشخاص الأجانب المقيمين بصفة شرعية فوق التراب المغربي، لا يقل عن 25000 توقيع ينتمون لثلث الجهات على الأقل. ويراعى في ذلك إجراء تصحيح الإمضاء من لدن السلطة الإدارية المختصة. ",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a6c",
+            "nodeId": "54fcb954aa1761110e955a54",
+            "status": "new",
+            "stats": {
+              "comments": 2,
+              "votes": 7,
+              "votesUp": 1,
+              "votesDown": 6
+            }
+          }
+        },
+        {
+          "slug": "article-5",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a57",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 6,
+            "votesUp": 4,
+            "votesDown": 2
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "The electronic signature can be adopted in accordance with the laws in force.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Peut être l'adoption de la signature électronique conformément aux lois en vigueur.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يمكن اعتماد التوقيع اإةلكتروني طبقا للقوانين الجاري بها العمل.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a6f",
+            "nodeId": "54fcb954aa1761110e955a57",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 6,
+              "votesUp": 4,
+              "votesDown": 2
+            }
+          }
+        },
+        {
+          "slug": "article-6",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a56",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 6,
+            "votesUp": 5,
+            "votesDown": 1
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "The form and the petition model and procedures for the collection of signatures are determined by a regulatory text.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Le modèle de réglementation et de la pétition et les procédures de collecte des signatures sont déterminés par un texte réglementaire.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يحدد بنص تنظيمي شكل ونموذج العريضة وإجراءات جمع التوقيعات.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a6e",
+            "nodeId": "54fcb954aa1761110e955a56",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 6,
+              "votesUp": 5,
+              "votesDown": 1
+            }
+          }
+        }
+      ],
+      "original": {
+        "isOriginal": true,
+        "locales": {
+          "en": {
+            "title": "PRESENTATION OF THE PETITION",
+            "dir": "ltr"
+          },
+          "fr": {
+            "title": "PRESENTATION DE LA PETITION",
+            "dir": "ltr"
+          },
+          "ar": {
+            "title": "تقديم العريضة",
+            "dir": "rtl"
+          }
+        },
+        "id": "54fcb954aa1761110e955a49",
+        "nodeId": "54fcb953aa1761110e955a41",
+        "status": "new",
+        "stats": {}
+      }
+    },
+    {
+      "slug": "section-6",
+      "abstract": true,
+      "id": "54fcb953aa1761110e955a45",
+      "stats": {
+        "nodes": 5,
+        "versions": 7,
+        "comments": 3,
+        "votes": 28,
+        "votesUp": 20,
+        "votesDown": 8
+      },
+      "nodes": [
+        {
+          "slug": "article-1",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a65",
+          "stats": {
+            "versions": 1,
+            "votes": 7,
+            "votesUp": 5,
+            "votesDown": 2
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Petition filed with public authorities directly involved in the forefront of the party.\n\nPublic authority gives a receipt once the reception of the petition.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Pétition déposée auprès des pouvoirs publics directement impliqués dans l'avant-garde de la partie.\n\nL'autorité publique donne un reçu dès l’arrivée de la pétition.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "تودع  العريضة لدى السلطات العمومية المعنية مباشرة من طرف مقدمها.\n\nتسلم السلطة العمومية وصلا فور تسلمها للعريضة.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a7c",
+            "nodeId": "54fcb954aa1761110e955a65",
+            "status": "new",
+            "stats": {
+              "votes": 7,
+              "votesUp": 5,
+              "votesDown": 2
+            }
+          }
+        },
+        {
+          "slug": "article-2",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a67",
+          "stats": {
+            "versions": 1,
+            "votes": 7,
+            "votesUp": 5,
+            "votesDown": 2
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Public authorities can receive petitions in writing via mail or modes of communication used from the presence of public administrations.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Les autorités publiques peuvent recevoir des pétitions par écrit par courrier ou par modes de communication utilisés par la présence des administrations publiques.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يمكن للسلطات العمومية أن تتلقي العرائض بشكل مكتوب عبر البريد أو وسائط الاتصال المستعملة من لدن الإدارات العمومية.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a7e",
+            "nodeId": "54fcb954aa1761110e955a67",
+            "status": "new",
+            "stats": {
+              "votes": 7,
+              "votesUp": 5,
+              "votesDown": 2
+            }
+          }
+        },
+        {
+          "slug": "article-3",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a66",
+          "stats": {
+            "versions": 2,
+            "comments": 1,
+            "votes": 4,
+            "votesUp": 3,
+            "votesDown": 1
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Operates the public authority to address the subject of the petition and inform the forefront of this in order to sixty days counted from the date of deposit.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "L'autorité publique aborde le sujet de la pétition et informe l'avant-garde  pour soixante jours à compter de la date de dépôt.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "تعمل السلطة العمومية المتلقية وجوبا على معالجة موضوع العريضة و إبلاغ مقدمها بذلك في أجل ستين يوما تحتسب من تاريخ الإيداع.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a7d",
+            "nodeId": "54fcb954aa1761110e955a66",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 4,
+              "votesUp": 3,
+              "votesDown": 1
+            }
+          }
+        },
+        {
+          "slug": "article-4",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a64",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 4,
+            "votesUp": 4
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "The date of filing of the petition beginning of the validity term set forth in this regulatory law.\n\nIn the case of the inability of the public authority to secure the answer or solution or intervention required within this term, telling the petitioner in writing in order to identify with the new does not exceed thirty days.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "La date de dépôt de la pétition début de la période de validité reconnus dans la présente loi réglementaire.\n\nDans le cas de l'incapacité de l'autorité publique pour obtenir la réponse ou la solution ou intervention nécessaire dans ce délai, dit le requérant par écrit afin d'identifier avec la nouvelle ne doit pas excéder trente jours.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يعتبر تاريخ إيداع العريضة بداية سريان الأجل المنصوص عليه في هذا القانون التنظيمي.\n\nفي حالة عدم تمكن السلطة العمومية من تأمين الجواب أو الحل أو التدخل المطلوب داخل هذا الأجل، تخبر مقدم العريضة كتابة مع تحديد أجل جديد لا يتعدى ثلاثين يوما.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a7b",
+            "nodeId": "54fcb954aa1761110e955a64",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 4,
+              "votesUp": 4
+            }
+          }
+        },
+        {
+          "slug": "article-5",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a68",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 6,
+            "votesUp": 3,
+            "votesDown": 3
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "If the subject of the petition does not fall within the purview of the public authority concerned, the latter is working on directing the petitioner to the competent authority or guidance as required by the subject of the petition.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Si le sujet de la pétition ne relève pas de la compétence de l'autorité publique concernée, celle-ci travaille à diriger le requérant à l'autorité compétente ou des directives au besoin par l'objet de la pétition.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "إذا كان موضوع العريضة لا يدخل ضمن اختصاص السلطة العمومية المعنية، تعمل هذه الأخيرة على توجيه مقدم العريضة إلى الجهة المختصة أو إرشاده وفق ما يقتضيه موضوع العريضة.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a7f",
+            "nodeId": "54fcb954aa1761110e955a68",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 6,
+              "votesUp": 3,
+              "votesDown": 3
+            }
+          }
+        }
+      ],
+      "original": {
+        "isOriginal": true,
+        "locales": {
+          "en": {
+            "title": "DEPOSIT AND PROCESSING THE PETITION",
+            "dir": "ltr"
+          },
+          "fr": {
+            "title": "DEPOT ET LE TRAITEMENT DE LA PETITION",
+            "dir": "ltr"
+          },
+          "ar": {
+            "title": "إيداع ومعالجة العريضة",
+            "dir": "rtl"
+          }
+        },
+        "id": "54fcb954aa1761110e955a50",
+        "nodeId": "54fcb953aa1761110e955a45",
+        "status": "new",
+        "stats": {}
+      }
+    },
+    {
+      "slug": "section-7",
+      "abstract": true,
+      "id": "54fcb953aa1761110e955a46",
+      "stats": {
+        "nodes": 2,
+        "versions": 3,
+        "comments": 1,
+        "votes": 12,
+        "votesUp": 9,
+        "votesDown": 3
+      },
+      "nodes": [
+        {
+          "slug": "article-1",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a60",
+          "stats": {
+            "versions": 1,
+            "votes": 6,
+            "votesUp": 4,
+            "votesDown": 2
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Public authorities concerned, are responsible for any default or procrastinating prevents the actual receipt of the petitions or processed according to the conditions and time limits specified in this regulatory law.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Les pouvoirs publics sont concernés, sont responsables de tout défaut ou de tergiverser empêche la réception effective des pétitions ou traités selon les conditions et délais prévus par la présente loi réglementaire.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "تعتبر السلطات العمومية المعنية، مسؤولة عن أي تقصير أو تماطل يحول دون التلقي الفعلي للعرائض أو معالجتها وفق الشروط والآجال المحددة في هذا القانون التنظيمي. ",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a79",
+            "nodeId": "54fcb954aa1761110e955a60",
+            "status": "new",
+            "stats": {
+              "votes": 6,
+              "votesUp": 4,
+              "votesDown": 2
+            }
+          }
+        },
+        {
+          "slug": "article-2",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a61",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 6,
+            "votesUp": 5,
+            "votesDown": 1
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "The petitioner is entitled to resort to the grievance Presidential Foundation or the mediator or the National Council for Human Rights, without preclude his right to resort to the competent judicial authority.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Le pétitionnaire a le droit de recourir à la Fondation présidentielle de grief ou le médiateur ou le Conseil national des droits de l'homme, sans exclure son droit de recourir à l'autorité judiciaire compétente.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يحق لمقدم العريضة اللجوء الى التظلم الرئاسي أو مؤسسة الوسيط أو المجلس الوطني لحقوق الإنسان دون أن يحول ذلك دون حقه في اللجوء الى الجهة القضائية المختصة.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a78",
+            "nodeId": "54fcb954aa1761110e955a61",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 6,
+              "votesUp": 5,
+              "votesDown": 1
+            }
+          }
+        }
+      ],
+      "original": {
+        "isOriginal": true,
+        "locales": {
+          "en": {
+            "title": "SANCTIONS",
+            "dir": "ltr"
+          },
+          "fr": {
+            "title": "SANCTIONS",
+            "dir": "ltr"
+          },
+          "ar": {
+            "title": "الجزاءات",
+            "dir": "rtl"
+          }
+        },
+        "id": "54fcb954aa1761110e955a4d",
+        "nodeId": "54fcb953aa1761110e955a46",
+        "status": "new",
+        "stats": {}
+      }
+    },
+    {
+      "slug": "section-8",
+      "abstract": true,
+      "id": "54fcb954aa1761110e955a47",
+      "stats": {
+        "nodes": 2,
+        "versions": 3,
+        "comments": 1,
+        "votes": 13,
+        "votesUp": 7,
+        "votesDown": 6
+      },
+      "nodes": [
+        {
+          "slug": "article-1",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a62",
+          "stats": {
+            "versions": 1,
+            "votes": 6,
+            "votesUp": 4,
+            "votesDown": 2
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Citizens and associations have the right to petition to the authorities and councils dirt other groups according to the provisions of Article 139 of the Constitution.\n\nLaw sets regulatory requirements for filing petitions under Chapter 139 of the Constitution.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Les citoyens et les associations ont le droit de pétition aux autorités et conseils saleté d'autres groupes selon les dispositions de l'article 139 de la Constitution.\n\nLoi établit des exigences réglementaires pour le dépôt des requêtes en vertu du chapitre 139 de la Constitution.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "للمواطنات ﻭالمواطنين ﻭﺍﻟﺠﻤﻌﻴﺎﺕ الحق تقديم عرائض إلى مجالس الجهات والجماعات الترابية الأخرى وفق مقتضيات الفصل 139 من الدستور.\n\nيحدد قاﻧﻮﻥ ﺗﻨﻈﻴﻤﻲ ﺷﺮﻭﻁ ﺗﻘﺪﻳﻢ ﺍﻟﻌﺮﺍﺋﺾ ﺍﻟﻤﻨﺼﻮﺹ ﻋﻠﻴﻬﺎ ﻓﻲ ﺍﻟﻔﺼﻞ 139 من الدستور.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a77",
+            "nodeId": "54fcb954aa1761110e955a62",
+            "status": "new",
+            "stats": {
+              "votes": 6,
+              "votesUp": 4,
+              "votesDown": 2
+            }
+          }
+        },
+        {
+          "slug": "article-2",
+          "abstract": false,
+          "id": "54fcb954aa1761110e955a5f",
+          "stats": {
+            "versions": 1,
+            "comments": 1,
+            "votes": 7,
+            "votesUp": 3,
+            "votesDown": 4
+          },
+          "nodes": [],
+          "original": {
+            "isOriginal": true,
+            "locales": {
+              "en": {
+                "title": "",
+                "text": "Regulatory text referred to in Article XV above issued within ninety days from the publication of this regulatory law in the Official Gazette.",
+                "dir": "ltr"
+              },
+              "fr": {
+                "title": "",
+                "text": "Le texte réglementaire visé à l'article XV ci-dessus est publié vingt-dix jours à compter de la publication de cette loi de réglementation dans la Gazette officielle.",
+                "dir": "ltr"
+              },
+              "ar": {
+                "title": "",
+                "text": "يصدر النص التنظيمي المشار إليه في المادة الخامسة عشر أعلاه خلال تسعين يوما من نشر هذا القانون التنظيمي في الجريدة الرسمية.",
+                "dir": "rtl"
+              }
+            },
+            "id": "54fcb954aa1761110e955a7a",
+            "nodeId": "54fcb954aa1761110e955a5f",
+            "status": "new",
+            "stats": {
+              "comments": 1,
+              "votes": 7,
+              "votesUp": 3,
+              "votesDown": 4
+            }
+          }
+        }
+      ],
+      "original": {
+        "isOriginal": true,
+        "locales": {
+          "en": {
+            "title": "FINAL PROVISIONS",
+            "dir": "ltr"
+          },
+          "fr": {
+            "title": "DISPOSITIONS FINALES",
+            "dir": "ltr"
+          },
+          "ar": {
+            "title": "أحكام ختامية",
+            "dir": "rtl"
+          }
+        },
+        "id": "54fcb954aa1761110e955a4f",
+        "nodeId": "54fcb954aa1761110e955a47",
+        "status": "new",
+        "stats": {}
+      }
+    }
+  ]
+}

@@ -7,7 +7,8 @@ describe('Module and deps', function() {
     'govright.corpusServices',
     'ngMaterial',
     'ui.router',
-    'gettext'
+    'gettext',
+    'ngLodash'
   ].forEach(function(module) {
     it(module + ' module should be registered', function() {
       expect(angular.module(module)).to.be.ok;

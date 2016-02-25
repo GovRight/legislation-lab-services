@@ -37,5 +37,5 @@
  */
 (function() {
   angular
-    .module('govright.platformServices', ['govright.corpusServices', 'ui.router', 'gettext', 'ngMaterial']);
+    .module('govright.platformServices', ['govright.corpusServices', 'ui.router', 'gettext', 'ngMaterial', 'ngLodash']);
 }());
