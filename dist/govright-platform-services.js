@@ -37,7 +37,7 @@
  */
 (function() {
   angular
-    .module('govright.platformServices', ['govright.corpusServices', 'ui.router', 'gettext', 'ngMaterial', 'ngLodash']);
+    .module('govright.platformServices', ['govright.corpusServices', 'ui.router', 'gettext', 'ngMaterial']);
 }());
 
 
@@ -1508,9 +1508,9 @@
     .module('govright.platformServices')
     .factory('grNodeTree', NodeTree);
 
-  NodeTree.$inject = ['lodash', 'grLocale'];
+  NodeTree.$inject = ['grLocale'];
 
-  function NodeTree(_, Locale) {
+  function NodeTree(Locale) {
     var defaultSettings = {
       maxTitleLength: 0,
       nodeTitleResolver: function(node) {
@@ -1524,14 +1524,14 @@
     };
 
     function NodeTreeController(document, customSettings) {
-      var settings = _.extend({}, defaultSettings, customSettings);
+      var settings = angular.extend({}, defaultSettings, customSettings);
       var nodeIdMap = {};
       var flattenedNodes = [];
 
       var self = this;
 
       function walkNodes(parent, depth) {
-        _.forEach(parent.nodes, function (node) {
+        parent.nodes.forEach(function (node) {
           flattenedNodes.push(node);
           nodeIdMap[node.id] = node;
           node.parent = parent;
