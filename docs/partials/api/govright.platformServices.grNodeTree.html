@@ -1,0 +1,119 @@
+<h1><code ng:non-bindable="">grNodeTree</code>
+<div><span class="hint">service in module <code ng:non-bindable="">govright.platformServices</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="govright-platformservices-grnodetree-page"><p>This service loops through node tree and decorates nodes with
+commonly used data like url or localised title.</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_create">create(document, settings)</h3>
+<div class="create"><div class="govright-platformservices-grnodetree-create-page"><p>Precessing node tree of provided document (law or discussion).
+Modifies nodes by reference.</p>
+<p>Example controller:</p>
+<pre class="prettyprint linenums">
+angular
+  .module('myApp')
+  .controller(['$scope', 'Law', 'grNodeTree', function($scope, Law, NodeTree) {
+    Law.package(function(law) {
+      var tree = NodeTree.create(law, {});
+      $scope.law = law;
+    });
+}]);
+</pre>
+<p>Corresponding template:</p>
+<pre class="prettyprint linenums">
+&lt;ul&gt;
+  &lt;li ng-repeat="n in ::law.nodes"
+      ng-init="depth = 0"
+      ng-include="'template:node-index-item'"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Nested node template --&gt;
+&lt;script type="text/ng-template" id="template:node-index-item"&gt;
+  &lt;a ng-href="{{::n.href}}"&gt;
+    {{::n.title}}
+  &lt;/a&gt;
+  &lt;ul ng-if="n.nodes.length"&gt;
+    &lt;li ng-repeat="n in ::n.nodes"
+        ng-init="depth = depth + 1"
+        ng-include="'template:node-index-item'"&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/script&gt;
+</pre>
+</div><h5 id="methods_create_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>document</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grnodetree-create-page"><p>Law or discussion package</p>
+</div></td></tr><tr><td>settings</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grnodetree-create-page"><p>Custom settings object that can have the next fields:</p>
+<p><table>
+  <tr>
+    <td>maxTitleLength</td>
+    <td><a href="" class="label type-hint type-hint-string">Number</a></td>
+    <td>Max length of node title in the tree.
+    Default is <code>0</code> which means no length limit.</td>
+  <tr>
+  <tr>
+    <td>nodeTitleResolver</td>
+    <td><a href="" class="label type-hint type-hint-object">Function</a></td>
+    <td>Function that resolves node title. Each node in the tree is yielded to
+      this function. Parameters:<br><br>
+      <ol>
+          <li><code>node</code> - current node
+          <li><code>document</code> - current document (law or discussion)
+          <li><code>depth</code> - node depth
+      </ol><br>
+      Default resolver returns localised title of node original.
+    </td>
+  <tr>
+  <tr>
+    <td>nodeHrefResolver</td>
+    <td><a href="" class="label type-hint type-hint-object">Function</a></td>
+    <td>Function that resolves node title. Each node in the tree is yielded to
+      this function. Parameters:<br><br>
+      <ol>
+          <li><code>node</code> - current node
+          <li><code>document</code> - current document (law or discussion)
+      </ol><br>
+      Default resolver returns corpus link of node.
+    </td>
+  <tr>
+</table>
+Example:
+<pre class="prettyprint linenums">
+angular
+  .module('myApp')
+  .controller(['$scope', '$state', 'Law', 'grNodeTree', 'grLocale'
+    function($scope, $state, Law, NodeTree, Locale) {
+
+      Law.package(function(law) {
+
+        var tree = NodeTree.create(law, {
+
+          // Define maximum title length, default is 0 (no limit)
+          maxTitleLength: 25,
+
+          // Custom logic to resolve each node title
+          nodeTitleResolver: function(node) {
+            return Locale.property(node.original, title, true);
+          },
+
+          // Custom logic to build each node url
+          nodeHrefResolver: function(node) {
+            return $state.href('site.law.node', { nodeId: node.id });
+          }
+        });
+
+        $scope.law = law;
+      });
+}]);
+</pre>
+</div></td></tr></tbody></table><h5 id="methods_create_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grnodetree-create-page"><p>Node tree instance, can be used to search in the node tree
+by node id. Example:</p>
+<pre class="prettyprint linenums">
+// Consider `tree` from the example above
+var node = tree.findById('node-id');
+</pre>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

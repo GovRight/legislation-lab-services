@@ -65,6 +65,15 @@ NG_DOCS={
       "moduleName": "govright.platformServices",
       "shortDescription": "Various site messages, like 404, dialog popups, success toast, etc.",
       "keywords": "$mddialog $mdtoast $state $stateprovider api button cancel canceled catch changing clicked close complete confirm content controller custom dialog display error error404 example govright grmessage html message messages method ngmaterial object occurred params platformservices popups request requires route router separate set site staticpagecontroller success templateurl text title toast transition transitions ui undefined url user"
+    },
+    {
+      "section": "api",
+      "id": "govright.platformServices.grNodeTree",
+      "shortName": "govright.platformServices.grNodeTree",
+      "type": "object",
+      "moduleName": "govright.platformServices",
+      "shortDescription": "This service loops through node tree and decorates nodes with",
+      "keywords": "$scope $state angular api build class commonly consider controller corpus corresponding create current custom data decorates default define depth discussion document example fields findbyid function govright grlocale grnodetree href instance label law length limit link locale localised logic loops maximum maxtitlelength method modifies module myapp nested ng-href ng-if ng-include ng-init ng-repeat node node-id nodehrefresolver nodeid nodes nodetitleresolver nodetree object original package parameters platformservices precessing property provided reference resolve resolver resolves return returns search service settings site template text title tree true type type-hint type-hint-object type-hint-string url var yielded"
     }
   ],
   "apis": {
