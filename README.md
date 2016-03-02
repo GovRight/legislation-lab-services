@@ -33,6 +33,7 @@ This will add the following services to your app:
 * [`grFacebook`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grFacebook)
 * [`grLocale`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grLocale)
 * [`grMessage`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grMessage)
+* [`grNodeTree`](http://govright.github.io/platform-services/docs/#/api/govright.platformServices.grNodeTree)
 
 ## Further reading
 
