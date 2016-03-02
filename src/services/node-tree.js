@@ -15,11 +15,13 @@
     .module('govright.platformServices')
     .factory('grNodeTree', NodeTree);
 
-  NodeTree.$inject = ['grLocale'];
+  NodeTree.$inject = ['$rootScope', 'grLocale'];
 
-  function NodeTree(Locale) {
+  function NodeTree($rootScope, Locale) {
     var defaultSettings = {
       maxTitleLength: 0,
+      populateNodeText: true,
+      repopulateOnLocaleChange: true,
       nodeTitleResolver: function(node) {
         return Locale.property(node.original, 'title');
       },
@@ -34,7 +36,6 @@
       var settings = angular.extend({}, defaultSettings, customSettings);
       var nodeIdMap = {};
       var flattenedNodes = [];
-
       var self = this;
 
       function walkNodes(parent, depth) {
@@ -42,9 +43,13 @@
           flattenedNodes.push(node);
           nodeIdMap[node.id] = node;
           node.parent = parent;
+          node.depth = depth;
 
-          node.title = self.nodeTitle(node, depth);
+          node.title = self.nodeTitle(node);
           node.href = self.nodeHref(node);
+          if (settings.populateNodeText) {
+            node.text = Locale.property(node.original, 'text', true) || '';
+          }
 
           walkNodes(node, depth + 1);
         });
@@ -54,8 +59,8 @@
         return nodeIdMap[id];
       };
 
-      this.nodeTitle = function(n, depth) {
-        var title = settings.nodeTitleResolver(n, document, depth);
+      this.nodeTitle = function(n) {
+        var title = settings.nodeTitleResolver(n, document);
         if (title && settings.maxTitleLength && title.length > settings.maxTitleLength) {
           title = title.substring(0, settings.maxTitleLength - 1) + '\u2026';
         }
@@ -87,6 +92,19 @@
           prev = node;
         }
       });
+
+      // Repopulate title, text and link on locale change
+      if(settings.repopulateOnLocaleChange) {
+        $rootScope.$on('locale:changed', function () {
+          flattenedNodes.forEach(function (node) {
+            node.title = self.nodeTitle(node);
+            node.href = self.nodeHref(node);
+            if (settings.populateNodeText) {
+              node.text = Locale.property(node.original, 'text', true) || '';
+            }
+          });
+        });
+      }
     }
 
     return {

@@ -3,13 +3,15 @@
 
 describe('grNodeTree', function() {
   var tree, doc = JSON.parse(JSON.stringify(window.__fixtures__.discussionPackage));
+  var Locale;
 
   beforeEach(module('govright.platformServices'));
 
   describe('#create()', function() {
     beforeEach(function() {
-      inject(function(grNodeTree) {
+      inject(function(grNodeTree, grLocale) {
         tree = grNodeTree.create(doc);
+        Locale = grLocale;
       });
     });
 
@@ -36,6 +38,20 @@ describe('grNodeTree', function() {
     it('should decorate nodes with localised title', function() {
       walkNodes(doc.nodes, function(n) {
         expect(n.title).to.equal(getTitle(n));
+      });
+    });
+
+    it('should decorate nodes with localised text', function() {
+      walkNodes(doc.nodes, function(n) {
+        expect(n.text).to.equal(getText(n));
+      });
+    });
+
+    it('should repopulate title and text on locale change', function() {
+      Locale.setCurrent('ar');
+      walkNodes(doc.nodes, function(n) {
+        expect(n.title).to.equal(getTitle(n, 'ar'));
+        expect(n.text).to.equal(getText(n, 'ar'));
       });
     });
 
@@ -100,8 +116,29 @@ describe('grNodeTree', function() {
     });
   });
 
-  function getTitle(node) {
-    return node.original.locales[Object.keys(node.original.locales)[0]].title;
+  describe('#create()', function() {
+    beforeEach(inject(function(grNodeTree) {
+      doc = JSON.parse(JSON.stringify(window.__fixtures__.discussionPackage));
+      tree = grNodeTree.create(doc, {
+        populateNodeText: false
+      });
+    }));
+
+    it('should allow to disable node text extraction', function () {
+      walkNodes(doc.nodes, function(n) {
+        expect(n.text).to.be.undefined;
+      });
+    });
+  });
+
+  function getTitle(node, locale) {
+    locale = locale || Object.keys(node.original.locales)[0];
+    return node.original.locales[locale].title;
+  }
+
+  function getText(node, locale) {
+    locale = locale || Object.keys(node.original.locales)[0];
+    return node.original.locales[locale].text || '';
   }
 
   function walkNodes(nodes, cb, parent) {
