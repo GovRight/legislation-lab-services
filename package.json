@@ -1,6 +1,6 @@
 {
   "name": "govright-platform-services",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Services that encapsulate common techniques of interacting with GovRight Corpus REST API",
   "author": "GovRight <contact@govright.org>",
   "repository": {

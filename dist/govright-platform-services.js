@@ -1508,11 +1508,13 @@
     .module('govright.platformServices')
     .factory('grNodeTree', NodeTree);
 
-  NodeTree.$inject = ['grLocale'];
+  NodeTree.$inject = ['$rootScope', 'grLocale'];
 
-  function NodeTree(Locale) {
+  function NodeTree($rootScope, Locale) {
     var defaultSettings = {
       maxTitleLength: 0,
+      populateNodeText: true,
+      repopulateOnLocaleChange: true,
       nodeTitleResolver: function(node) {
         return Locale.property(node.original, 'title');
       },
@@ -1527,7 +1529,6 @@
       var settings = angular.extend({}, defaultSettings, customSettings);
       var nodeIdMap = {};
       var flattenedNodes = [];
-
       var self = this;
 
       function walkNodes(parent, depth) {
@@ -1535,9 +1536,13 @@
           flattenedNodes.push(node);
           nodeIdMap[node.id] = node;
           node.parent = parent;
+          node.depth = depth;
 
-          node.title = self.nodeTitle(node, depth);
+          node.title = self.nodeTitle(node);
           node.href = self.nodeHref(node);
+          if (settings.populateNodeText) {
+            node.text = Locale.property(node.original, 'text', true) || '';
+          }
 
           walkNodes(node, depth + 1);
         });
@@ -1547,8 +1552,8 @@
         return nodeIdMap[id];
       };
 
-      this.nodeTitle = function(n, depth) {
-        var title = settings.nodeTitleResolver(n, document, depth);
+      this.nodeTitle = function(n) {
+        var title = settings.nodeTitleResolver(n, document);
         if (title && settings.maxTitleLength && title.length > settings.maxTitleLength) {
           title = title.substring(0, settings.maxTitleLength - 1) + '\u2026';
         }
@@ -1580,6 +1585,19 @@
           prev = node;
         }
       });
+
+      // Repopulate title, text and link on locale change
+      if(settings.repopulateOnLocaleChange) {
+        $rootScope.$on('locale:changed', function () {
+          flattenedNodes.forEach(function (node) {
+            node.title = self.nodeTitle(node);
+            node.href = self.nodeHref(node);
+            if (settings.populateNodeText) {
+              node.text = Locale.property(node.original, 'text', true) || '';
+            }
+          });
+        });
+      }
     }
 
     return {
@@ -1591,7 +1609,35 @@
        * @description
        *
        * Precessing node tree of provided document (law or discussion).
-       * Modifies nodes by reference.
+       * Modifies nodes by reference. The following fields are populated on each node:
+       *
+       * <table>
+       *   <tr>
+       *     <td>`parent`</td>
+       *     <td><a href="" class="label type-hint type-hint-object">Object</a></td>
+       *     <td>Parent node reference</td>
+       *   <tr>
+       *   <tr>
+       *     <td>`depth`</td>
+       *     <td><a href="" class="label type-hint type-hint-number">Number</a></td>
+       *     <td>Node depth, starts with 0 for root nodes</td>
+       *   <tr>
+       *   <tr>
+       *     <td>`title`</td>
+       *     <td><a href="" class="label type-hint type-hint-string">String</a></td>
+       *     <td>Localised node title extracted from original version locales</td>
+       *   <tr>
+       *   <tr>
+       *     <td>`text`</td>
+       *     <td><a href="" class="label type-hint type-hint-string">String</a></td>
+       *     <td>Localised node text extracted from original version locales</td>
+       *   <tr>
+       *   <tr>
+       *     <td>`href`</td>
+       *     <td><a href="" class="label type-hint type-hint-string">String</a></td>
+       *     <td>Node url</td>
+       *   <tr>
+       * </table>
        *
        * Example controller:
        *
@@ -1634,9 +1680,24 @@
        * <table>
        *   <tr>
        *     <td>maxTitleLength</td>
-       *     <td><a href="" class="label type-hint type-hint-string">Number</a></td>
+       *     <td><a href="" class="label type-hint type-hint-number">Number</a></td>
        *     <td>Max length of node title in the tree.
        *     Default is `0` which means no length limit.</td>
+       *   <tr>
+       *      <tr>
+       *     <td>populateNodeText</td>
+       *     <td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td>
+       *     <td>
+       *         Enable/disable node text extraction, default is `true`.
+       *     </td>
+       *   <tr>
+       *   <tr>
+       *     <td>repopulateOnLocaleChange</td>
+       *     <td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td>
+       *     <td>
+       *         Enable/disable node text & title extraction on every locale change,
+       *         default is `true`.
+       *     </td>
        *   <tr>
        *   <tr>
        *     <td>nodeTitleResolver</td>

@@ -116,7 +116,35 @@
        * @description
        *
        * Precessing node tree of provided document (law or discussion).
-       * Modifies nodes by reference.
+       * Modifies nodes by reference. The following fields are populated on each node:
+       *
+       * <table>
+       *   <tr>
+       *     <td>`parent`</td>
+       *     <td><a href="" class="label type-hint type-hint-object">Object</a></td>
+       *     <td>Parent node reference</td>
+       *   <tr>
+       *   <tr>
+       *     <td>`depth`</td>
+       *     <td><a href="" class="label type-hint type-hint-number">Number</a></td>
+       *     <td>Node depth, starts with 0 for root nodes</td>
+       *   <tr>
+       *   <tr>
+       *     <td>`title`</td>
+       *     <td><a href="" class="label type-hint type-hint-string">String</a></td>
+       *     <td>Localised node title extracted from original version locales</td>
+       *   <tr>
+       *   <tr>
+       *     <td>`text`</td>
+       *     <td><a href="" class="label type-hint type-hint-string">String</a></td>
+       *     <td>Localised node text extracted from original version locales</td>
+       *   <tr>
+       *   <tr>
+       *     <td>`href`</td>
+       *     <td><a href="" class="label type-hint type-hint-string">String</a></td>
+       *     <td>Node url</td>
+       *   <tr>
+       * </table>
        *
        * Example controller:
        *
@@ -159,9 +187,24 @@
        * <table>
        *   <tr>
        *     <td>maxTitleLength</td>
-       *     <td><a href="" class="label type-hint type-hint-string">Number</a></td>
+       *     <td><a href="" class="label type-hint type-hint-number">Number</a></td>
        *     <td>Max length of node title in the tree.
        *     Default is `0` which means no length limit.</td>
+       *   <tr>
+       *      <tr>
+       *     <td>populateNodeText</td>
+       *     <td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td>
+       *     <td>
+       *         Enable/disable node text extraction, default is `true`.
+       *     </td>
+       *   <tr>
+       *   <tr>
+       *     <td>repopulateOnLocaleChange</td>
+       *     <td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td>
+       *     <td>
+       *         Enable/disable node text & title extraction on every locale change,
+       *         default is `true`.
+       *     </td>
        *   <tr>
        *   <tr>
        *     <td>nodeTitleResolver</td>
