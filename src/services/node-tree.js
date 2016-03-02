@@ -269,7 +269,7 @@
        * <table>
        *   <tr>
        *     <td>`findById(nodeId)`</td>
-       *     <td>Finds node by id and any level of the tree.</td>
+       *     <td>Finds node by id, works for nodes on any level of the tree.</td>
        *   <tr>
        *      <tr>
        *     <td>`getFlatList()`</td>
