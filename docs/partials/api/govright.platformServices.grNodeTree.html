@@ -149,11 +149,27 @@ angular
       });
 }]);
 </pre>
-</div></td></tr></tbody></table><h5 id="methods_create_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grnodetree-create-page"><p>Node tree instance, can be used to search in the node tree
-by node id. Example:</p>
+</div></td></tr></tbody></table><h5 id="methods_create_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-platformservices-grnodetree-create-page"><p>Node tree instance that has the following methods:</p>
+<table>
+  <tr>
+    <td><code>findById(nodeId)</code></td>
+    <td>Finds node by id and any level of the tree.</td>
+  <tr>
+     <tr>
+    <td><code>getFlatList()</code></td>
+    <td>Returns flat array of all nodes in the tree.</td>
+  <tr>
+</table>
+
+<p>Example:</p>
 <pre class="prettyprint linenums">
 // Consider `tree` from the example above
+
+// Find node by id
 var node = tree.findById('node-id');
+
+// Get flat array of nodes
+var nodeArray = tree.getFlatList();
 </pre>
 </div></td></tr></table></div>
 </li>
