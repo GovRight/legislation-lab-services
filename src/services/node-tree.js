@@ -168,7 +168,6 @@
        * <pre>
        * <ul>
        *   <li ng-repeat="n in ::law.nodes"
-       *       ng-init="depth = 0"
        *       ng-include="'template:node-index-item'"></li>
        * </ul>
        *
@@ -179,7 +178,6 @@
        *   </a>
        *   <ul ng-if="n.nodes.length">
        *     <li ng-repeat="n in ::n.nodes"
-       *         ng-init="depth = depth + 1"
        *         ng-include="'template:node-index-item'"></li>
        *   </ul>
        * </script>
