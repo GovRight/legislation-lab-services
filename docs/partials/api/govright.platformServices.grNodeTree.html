@@ -54,7 +54,6 @@ angular
 <pre class="prettyprint linenums">
 &lt;ul&gt;
   &lt;li ng-repeat="n in ::law.nodes"
-      ng-init="depth = 0"
       ng-include="'template:node-index-item'"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -65,7 +64,6 @@ angular
   &lt;/a&gt;
   &lt;ul ng-if="n.nodes.length"&gt;
     &lt;li ng-repeat="n in ::n.nodes"
-        ng-init="depth = depth + 1"
         ng-include="'template:node-index-item'"&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/script&gt;
