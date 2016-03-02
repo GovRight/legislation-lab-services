@@ -10,7 +10,35 @@ commonly used data like url or localised title.</p>
 <div class="member method"><h2 id="methods">Methods</h2>
 <ul class="methods"><li><h3 id="methods_create">create(document, settings)</h3>
 <div class="create"><div class="govright-platformservices-grnodetree-create-page"><p>Precessing node tree of provided document (law or discussion).
-Modifies nodes by reference.</p>
+Modifies nodes by reference. The following fields are populated on each node:</p>
+<table>
+  <tr>
+    <td><code>parent</code></td>
+    <td><a href="" class="label type-hint type-hint-object">Object</a></td>
+    <td>Parent node reference</td>
+  <tr>
+  <tr>
+    <td><code>depth</code></td>
+    <td><a href="" class="label type-hint type-hint-number">Number</a></td>
+    <td>Node depth, starts with 0 for root nodes</td>
+  <tr>
+  <tr>
+    <td><code>title</code></td>
+    <td><a href="" class="label type-hint type-hint-string">String</a></td>
+    <td>Localised node title extracted from original version locales</td>
+  <tr>
+  <tr>
+    <td><code>text</code></td>
+    <td><a href="" class="label type-hint type-hint-string">String</a></td>
+    <td>Localised node text extracted from original version locales</td>
+  <tr>
+  <tr>
+    <td><code>href</code></td>
+    <td><a href="" class="label type-hint type-hint-string">String</a></td>
+    <td>Node url</td>
+  <tr>
+</table>
+
 <p>Example controller:</p>
 <pre class="prettyprint linenums">
 angular
@@ -47,9 +75,24 @@ angular
 <p><table>
   <tr>
     <td>maxTitleLength</td>
-    <td><a href="" class="label type-hint type-hint-string">Number</a></td>
+    <td><a href="" class="label type-hint type-hint-number">Number</a></td>
     <td>Max length of node title in the tree.
     Default is <code>0</code> which means no length limit.</td>
+  <tr>
+     <tr>
+    <td>populateNodeText</td>
+    <td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td>
+    <td>
+        Enable/disable node text extraction, default is <code>true</code>.
+    </td>
+  <tr>
+  <tr>
+    <td>repopulateOnLocaleChange</td>
+    <td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td>
+    <td>
+        Enable/disable node text &amp; title extraction on every locale change,
+        default is <code>true</code>.
+    </td>
   <tr>
   <tr>
     <td>nodeTitleResolver</td>
