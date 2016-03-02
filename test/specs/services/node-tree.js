@@ -60,7 +60,15 @@ describe('grNodeTree', function() {
         var res = tree.findById(n.id);
         expect(res).to.eql(n);
       });
-    })
+    });
+
+    it('should return flat array of nodes', function() {
+      var count = 0;
+      walkNodes(doc.nodes, function() {
+        count++;
+      });
+      expect(tree.getFlatList().length).to.equal(count);
+    });
   });
 
 

@@ -1573,6 +1573,10 @@
         }
       };
 
+      this.getFlatList = function() {
+        return flattenedNodes;
+      };
+
       walkNodes(document, 0);
       // It's difficult to build up the links in the above recursive walk
       // because of abstract nodes which must be skipped.
@@ -1755,12 +1759,29 @@
        * }]);
        * </pre>
        *
-       * @return {Object} Node tree instance, can be used to search in the node tree
-       * by node id. Example:
+       * @return {Object} Node tree instance that has the following methods:
+       *
+       * <table>
+       *   <tr>
+       *     <td>`findById(nodeId)`</td>
+       *     <td>Finds node by id and any level of the tree.</td>
+       *   <tr>
+       *      <tr>
+       *     <td>`getFlatList()`</td>
+       *     <td>Returns flat array of all nodes in the tree.</td>
+       *   <tr>
+       * </table>
+       *
+       * Example:
        *
        * <pre>
        * // Consider `tree` from the example above
+       *
+       * // Find node by id
        * var node = tree.findById('node-id');
+       *
+       * // Get flat array of nodes
+       * var nodeArray = tree.getFlatList();
        * </pre>
        */
       create: function(document, settings) {
