@@ -5,6 +5,9 @@
  * @name govright.platformServices.grNodeTree
  * @header govright.platformServices.grNodeTree
  *
+ * @requires $rootScope
+ * @requires govright.platformServices.grLocale
+ *
  * @description
  *
  * This service loops through node tree and decorates nodes with
