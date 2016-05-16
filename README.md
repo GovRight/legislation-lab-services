@@ -15,7 +15,7 @@ Add `govright.platformServices` module as a dependency to your main application 
  <head>
    <script src="js/angular.js"></script>
    <!-- Include the platform services script -->
-   <script src="dist/govright-ll-services.js"></script>
+   <script src="dist/govright-platform-services.js"></script>
    <script>
      // ...and add 'govright.platformServices' as a dependency
      var myApp = angular.module('myApp', ['govright.platformServices']);
